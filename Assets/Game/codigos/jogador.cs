@@ -48,6 +48,7 @@ public class jogador : MonoBehaviour
     public float maxY;
     private float dano_quedas;
     public AudioSource som_queda;
+    public float poder_countdown;
     // Start is called before the first frame update
     void Start()
     {
@@ -65,11 +66,15 @@ public class jogador : MonoBehaviour
         poderes_invocados = new GameObject[20];
         pos_inicial = transform.position;
         som = GetComponent<AudioSource>();
+        poder_countdown = 0;
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (poder_countdown > 0) { poder_countdown += Time.deltaTime; }
+        if (poder_countdown > 4) { poder_countdown = 0; }
         if (velocidadey.y < maxY) { maxY = velocidadey.y; }
         if (transform.position.y < -13) { reiniciarpos();vida_atual -= 2; }
         if (vida_atual <= 0) { estado = "morte"; vida_atual = 0; }
@@ -152,11 +157,12 @@ public class jogador : MonoBehaviour
 
             if (Input.GetKeyUp(KeyCode.KeypadEnter)|| Input.GetKeyUp(KeyCode.Return))
             {
-                if (elemento1 != "" && estado != "especial_voar")
+                if (elemento1 != "" && estado != "especial_voar"&&poder_countdown==0)
                 {
                     
                     if (estado == "parado" || estado == "andando")
                     {
+                        poder_countdown = 0.01f;
                         rig.velocity = new Vector2(0, 0);
                         if (elemento2 == "")
                         {
