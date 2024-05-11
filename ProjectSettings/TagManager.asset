@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - parede
+  - inimigo
+  - jogador
+  - powerup
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - chao
+  - Water
+  - UI
+  - inimigo
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: hud
+    uniqueID: 834494871
+    locked: 0
+  - name: aviso
+    uniqueID: 2475512387
+    locked: 0
