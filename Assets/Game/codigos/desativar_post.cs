@@ -9,13 +9,13 @@ public class desativar_post : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
-        if (configuracoes.postpros) { anim.Play("ativar post"); }
-        else { anim.Play("desativar post"); }
+       
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (config_sons.postpros) { anim.Play("ativar post"); }
+        else { anim.Play("desativar post"); }
     }
 }

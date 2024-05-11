@@ -13,10 +13,20 @@ public class Menu : MonoBehaviour
 
     public AudioSource som;
     public AudioClip [] sons_menu;
+    public static bool inicio;
     // Start is called before the first frame update
     void Start()
     {
+        
         som = GetComponent<AudioSource>();
+    }
+    private void Awake()
+    {
+        if (!inicio)
+        {
+            config_sons.postpros = true;
+            inicio = true;
+        }
     }
 
     // Update is called once per frame

@@ -59,12 +59,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Game\codigos\ataque_inimigo.cs" />
+    <Compile Include="Assets\Game\codigos\config_sons.cs" />
     <Compile Include="Assets\Game\codigos\hud.cs" />
     <Compile Include="Assets\Game\codigos\SteamScript.cs" />
     <Compile Include="Assets\Game\codigos\plataforma.cs" />
     <Compile Include="Assets\Game\codigos\desativar_arena.cs" />
     <Compile Include="Assets\Game\codigos\desativar_post.cs" />
-    <Compile Include="Assets\Game\codigos\ativar_post.cs" />
     <Compile Include="Assets\Scripts\Steamworks.NET\SteamManager.cs" />
     <Compile Include="Assets\Game\codigos\proximatela.cs" />
     <Compile Include="Assets\Game\codigos\ataque.cs" />
@@ -79,7 +79,6 @@
     <Compile Include="Assets\Game\codigos\ativar_arena.cs" />
     <Compile Include="Assets\Game\codigos\inimigos.cs" />
     <Compile Include="Assets\Game\codigos\jogador.cs" />
-    <Compile Include="Assets\Game\codigos\configuracoes.cs" />
     <Compile Include="Assets\Game\codigos\golpeespecial.cs" />
     <Compile Include="Assets\Game\codigos\tradutor.cs" />
     <Compile Include="Assets\Game\codigos\menu_pausa.cs" />
