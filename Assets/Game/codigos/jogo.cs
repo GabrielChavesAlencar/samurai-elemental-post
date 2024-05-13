@@ -10,7 +10,11 @@ public class jogo : MonoBehaviour
     public jogador player;
     public static int num_tela;
     public Sprite[] backgrunds;
+    public Sprite[] backgrunds_juntas;
     public SpriteRenderer back_render;
+    public SpriteRenderer back_render2;
+    public GameObject junta1;
+    public GameObject junta2;
     public AudioClip[] musicas;
     public AudioSource som;
     // Start is called before the first frame update
