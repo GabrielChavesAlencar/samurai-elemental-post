@@ -87,18 +87,27 @@ public class jogador : MonoBehaviour
         }
         else if (estado != "morte"&& estado != "dano")
         {
+            if (velocidadey.y < -1) {
+                if (estado != "ataque_pulando" && estado != "especial_voar") {
+                    estado = "caindo";
+                }
+            }
+            if (estado == "caindo") {
+                if (esta_no_chao) { estado = "parado"; }
+            }
             if (Physics2D.OverlapCircle(pe_trans.position, 0.3f, chao))
             {
                 esta_no_chao = true;
                 if (dano_queda) { vida_atual -= dano_quedas;  dano_queda = false; som_queda.Play(); }
             }
             else {
+              
                 esta_no_chao = false;
                 if (velocidadey.y < -19 && velocidadey.y > -24 && estado != "ataque_pulando") { dano_queda = true;dano_quedas = 2; }
                 else if (velocidadey.y < -24 && estado != "ataque_pulando") { dano_queda = true; dano_quedas = 4; }
                 else if (velocidadey.y < -30 && estado == "ataque_pulando") { dano_queda = true; dano_quedas = 2; }
             }
-            //esta_no_chao = Physics2D.OverlapCircle(pe_trans.position, 0.3f, chao);
+        
             esta_no_inimigo = Physics2D.OverlapCircle(pe_trans.position, 0.3f, inimigo_layer);
 
 
@@ -115,6 +124,7 @@ public class jogador : MonoBehaviour
             else if (estado == "ataque3") { anim.Play("ataque3"); }
             else if (estado == "especial_voar") { anim.Play("especial_voar"); }
             else if (estado == "poderespecial") { anim.Play("poderespecial"); }
+            else if (estado == "caindo") { anim.Play("caindo"); }
             else if (estado == "ataque_pulando")
             {
                 anim.Play("ataque_aereo");
