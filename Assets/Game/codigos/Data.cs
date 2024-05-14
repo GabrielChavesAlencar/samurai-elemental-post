@@ -485,6 +485,44 @@ public static class Data {
                 }
 
             }
+            ,
+             { "windowed_key",new Dictionary<string,string>()
+                {
+                    {"en-US","Windowed Mode" },
+                    {"ru-RU","Оконный режим" },
+                    {"ja-JP","ウィンドウモード" },
+                    {"es-ES","Modo ventana" },
+                    {"zh-CN","窗口模式" },
+                    {"de-DE","Fenstermodus" },
+                    {"pt-BR","Modo Janela"}
+                }
+            }
+             ,
+             { "resolution_key",new Dictionary<string,string>()
+                {
+                    {"en-US","Resolution" },
+                    {"ru-RU","Разрешение" },
+                    {"ja-JP","解像度" },
+                    {"es-ES","Resolución" },
+                    {"zh-CN","分辨率" },
+                    {"de-DE","Auflösung" },
+                    {"pt-BR","Resolução"}
+                }
+
+            }
+             ,
+             { "quality_key",new Dictionary<string,string>()
+                {
+                    {"en-US","Graphics Quality" },
+                    {"ru-RU","Качество графики" },
+                    {"ja-JP","グラフィック品質" },
+                    {"es-ES","Calidad de gráficos" },
+                    {"zh-CN","图形质量" },
+                    {"de-DE","Grafikqualität" },
+                    {"pt-BR","Qualidade Gráfica"}
+                }
+
+            }
 
 
 

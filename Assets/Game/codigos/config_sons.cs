@@ -1,4 +1,6 @@
 using System.Collections;
+using System;
+using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -17,7 +19,40 @@ public class config_sons : MonoBehaviour
 
     public static bool postpros;
     public Toggle tog;
-    public void mastersond(float num) {
+
+    public Dropdown ddpResolution;
+    public Dropdown ddpQuality;
+
+    public Toggle tgWindown;
+
+    private List<string> resolutions = new List<string>();
+    private List<string> quality = new List<string>();
+   
+    // Start is called before the first frame update
+    void Start()
+    {
+        master_slider.value = volume_master;
+        music_slider.value = volume_music;
+        efects_slider.value = volume_efeitos;
+        tog.isOn = postpros;
+
+        Resolution[] arrResolution = Screen.resolutions;
+        foreach (Resolution r in arrResolution) {
+            resolutions.Add(string.Format("{0} x {1}",r.width,r.height));
+        }
+        ddpResolution.AddOptions(resolutions);
+        ddpResolution.value = (resolutions.Count - 1);
+
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+    public void mastersond(float num)
+    {
         volume_master = num;
 
         mixer.SetFloat("volume_master", num);
@@ -35,20 +70,10 @@ public class config_sons : MonoBehaviour
         mixer.SetFloat("volume_efeitos", num);
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        master_slider.value = volume_master;
-        music_slider.value = volume_music;
-        efects_slider.value = volume_efeitos;
-        tog.isOn = postpros;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void post(bool b) { postpros = b; }
+
+    public void set_quality() { } 
+    public void set_resolution() { } 
+    public void set_windown_mode() { } 
 }

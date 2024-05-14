@@ -102,7 +102,7 @@ public class jogador : MonoBehaviour
             }
             */
             if (velocidadey.y < -1) {
-                if (estado != "ataque_pulando" && estado != "especial_voar") {
+                if (estado != "ataque_pulando" && estado != "especial_voar" && estado != "ataque1" && estado != "ataque2" && estado != "ataque3") {
                     estado = "caindo";
                 }
             }
