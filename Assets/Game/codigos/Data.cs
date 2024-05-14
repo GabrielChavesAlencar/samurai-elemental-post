@@ -523,6 +523,32 @@ public static class Data {
                 }
 
             }
+              ,
+             { "lingua_key",new Dictionary<string,string>()
+                {
+                    {"en-US","English" },
+                    {"ru-RU","Русский" },
+                    {"ja-JP","日本語" },
+                    {"es-ES","Español" },
+                    {"zh-CN","中文" },
+                    {"de-DE","Deutsch" },
+                    {"pt-BR","Português"}
+                }
+
+            }
+             ,
+             { "idioma_key",new Dictionary<string,string>()
+                {
+                    {"en-US","Language" },
+                    {"ru-RU","Язык" },
+                    {"ja-JP","言語" },
+                    {"es-ES","Idioma" },
+                    {"zh-CN","语言" },
+                    {"de-DE","Sprache" },
+                    {"pt-BR","Idioma"}
+                }
+
+            }
 
 
 
