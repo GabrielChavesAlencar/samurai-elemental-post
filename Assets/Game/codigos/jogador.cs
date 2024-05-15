@@ -467,7 +467,7 @@ public class jogador : MonoBehaviour
         estado = "parado";
     }
     public void impulso_cima() { rig.velocity = new Vector2(rig.velocity.x, 0); rig.AddForce(transform.up * (forca_pulo/1.1f), ForceMode2D.Impulse); }
-    public void impulso_cima_leve() { rig.velocity = new Vector2(rig.velocity.x, 0); rig.AddForce(transform.up * (forca_pulo/1.5f), ForceMode2D.Impulse); }
+    public void impulso_cima_leve() { rig.velocity = new Vector2(rig.velocity.x, 0); rig.AddForce(transform.up * (forca_pulo/1.6f), ForceMode2D.Impulse); }
     public void impulso_baixo() { rig.velocity = new Vector2(rig.velocity.x, 0); rig.AddForce(transform.up * -(forca_pulo), ForceMode2D.Impulse); }
     public void impulso_leve() {
         if (transform.localScale.x > 0) { rig.AddForce(transform.right * 4, ForceMode2D.Impulse); if (rig.velocity.x > 5) { rig.velocity = new Vector2(5, rig.velocity.y); } }
