@@ -48,6 +48,7 @@ public class jogador : MonoBehaviour
     public float maxY;
     private float dano_quedas;
     public AudioSource som_queda;
+    public AudioSource som_queda2;
     public float poder_countdown;
     // Start is called before the first frame update
     void Start()
@@ -117,9 +118,9 @@ public class jogador : MonoBehaviour
             else {
               
                 esta_no_chao = false;
-                if (velocidadey.y < -19 && velocidadey.y > -24 && estado != "ataque_pulando") { dano_queda = true;dano_quedas = 1; }
-                else if (velocidadey.y < -24 && estado != "ataque_pulando") { dano_queda = true; dano_quedas = 2; }
-                else if (velocidadey.y < -30 && estado == "ataque_pulando") { dano_queda = true; dano_quedas = 1; }
+                if (velocidadey.y < -19 && velocidadey.y > -24 && estado != "ataque_pulando") { dano_queda = true;dano_quedas = 10; }
+                else if (velocidadey.y < -24 && estado != "ataque_pulando") { dano_queda = true; dano_quedas = 20; }
+                else if (velocidadey.y < -30 && estado == "ataque_pulando") { dano_queda = true; dano_quedas = 10; }
             }
         
             esta_no_inimigo = Physics2D.OverlapCircle(pe_trans.position, 0.3f, inimigo_layer);
@@ -417,7 +418,7 @@ public class jogador : MonoBehaviour
             if (esta_no_chao_espada || esta_no_inimigo_espada || esta_no_inimigo)
             {
                 rig.velocity = new Vector2(rig.velocity.x, 0);
-                if (esta_no_inimigo) { }
+                if (esta_no_inimigo) { vida_atual -= 5;som_queda2.Play(); }
                 mini_pulo();
                
                 impulso_leve();
