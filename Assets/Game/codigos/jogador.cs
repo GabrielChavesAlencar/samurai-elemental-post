@@ -389,6 +389,10 @@ public class jogador : MonoBehaviour
                     rig.velocity = new Vector2(220 * Time.fixedDeltaTime, rig.velocity.y);
                     transform.localScale = escala_inicial;
                 }
+                else if (estado == "pulando" || estado == "caindo") {
+                    rig.velocity = new Vector2(220 * Time.fixedDeltaTime, rig.velocity.y);
+                    transform.localScale = escala_inicial;
+                }
             }
 
 
@@ -398,6 +402,10 @@ public class jogador : MonoBehaviour
                 if (estado == "parado" || estado == "andando")
                 {
                     estado = "andando";
+                    rig.velocity = new Vector2(-220 * Time.fixedDeltaTime, rig.velocity.y);
+                    transform.localScale = new Vector3(-escala_inicial.x, escala_inicial.y, escala_inicial.z);
+                }
+                else if (estado == "pulando"|| estado == "caindo") {
                     rig.velocity = new Vector2(-220 * Time.fixedDeltaTime, rig.velocity.y);
                     transform.localScale = new Vector3(-escala_inicial.x, escala_inicial.y, escala_inicial.z);
                 }
