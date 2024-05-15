@@ -34,6 +34,9 @@ public class mob : MonoBehaviour
     public GameObject rastro;
     public bool drop_garantido;
     public bool vivo;
+    public Transform pe_trans;
+    public LayerMask inimigo_layer;
+    public bool contato;
     // Start is called before the first frame update
     void Start()
     {
@@ -72,14 +75,32 @@ public class mob : MonoBehaviour
         acao1();
         if (countdown_dano <= 0&&estado!="morte")
         {
-            if (distancia > 2.7f) { estado = "andando"; }
-            else { estado = "atacando"; }
+            if (estado != "impulso")
+            {
+                if (distancia > 2.7f) { estado = "andando"; }
+                else { estado = "atacando"; }
+            }
         }
-       
+        if (Physics2D.OverlapCircle(pe_trans.position, 0.1f, inimigo_layer))
+        {
+            contato = true;
+           
+        }
+        else { contato = false; }
 
-       
+        if (contato && !atual.voador) {
+            estado = "impulso";
+            impulso_leve();
+            mini_pulo();
+          
+            contato = false;
+        }
+        if (rig.velocity.y>-0.5f&& rig.velocity.y < 0.5f) {
+            if (estado == "impulso") { estado = "parado"; }
+        }
 
-    }
+
+     }
     private void FixedUpdate()
     {
 
@@ -185,6 +206,23 @@ public class mob : MonoBehaviour
             }
         }
     }
+    public void impulso_leve()
+    {
+        if (transform.localScale.x > 0) { rig.AddForce(transform.right * 150, ForceMode2D.Impulse); if (rig.velocity.x > 10) { rig.velocity = new Vector2(10, rig.velocity.y); } }
+        else { rig.AddForce(transform.right * -150, ForceMode2D.Impulse); if (rig.velocity.x < -10) { rig.velocity = new Vector2(-10, rig.velocity.y); } }
+
+    }
+    public void mini_pulo()
+    {
+        rig.velocity = new Vector2(rig.velocity.x, 0);
+
+        rig.AddForce(transform.up * (150 / 1.7f), ForceMode2D.Impulse);
+
+
+        if (rig.velocity.y > 15) { rig.velocity = new Vector2(rig.velocity.x, 15); }
+    }
+    public void impulso_cima_leve() { rig.velocity = new Vector2(rig.velocity.x, 0); rig.AddForce(transform.up * (15 / 1.5f), ForceMode2D.Impulse); }
+
     private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("parede")){

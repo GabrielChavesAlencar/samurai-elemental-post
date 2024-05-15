@@ -170,7 +170,7 @@ public class jogador : MonoBehaviour
                     som.Play();
 
                 }
-                if (estado == "pulando")
+                if (estado == "pulando"|| estado == "caindo")
                 {
                     som.clip = efeitos_katana[2]; som.Play(); 
 

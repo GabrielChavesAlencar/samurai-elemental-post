@@ -68,6 +68,7 @@ Transform:
   - {fileID: 5741753562074966568}
   - {fileID: 2339313767711557456}
   - {fileID: 1358724551595258617}
+  - {fileID: 8320261620379752354}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -181,6 +182,11 @@ MonoBehaviour:
   rastro: {fileID: 5522031941414435207}
   drop_garantido: 0
   vivo: 0
+  pe_trans: {fileID: 8320261620379752354}
+  inimigo_layer:
+    serializedVersion: 2
+    m_Bits: 64
+  contato: 0
 --- !u!50 &6184512195333259059
 Rigidbody2D:
   serializedVersion: 4
@@ -339,6 +345,37 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1503464136092522824
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8320261620379752354}
+  m_Layer: 6
+  m_Name: pe inseto
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8320261620379752354
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503464136092522824}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.18, y: -1.44, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1274462321727397782}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3751175411661597730
 GameObject:
   m_ObjectHideFlags: 0
