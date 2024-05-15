@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: formiga boss
   m_EditorClassIdentifier: 
   tipo: 5
-  vida: 100
+  vida: 1000
   velocidade: 10
   ataque: 2
   voador: 0

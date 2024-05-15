@@ -24,6 +24,7 @@ public class ataque_inimigo : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("jogador"))
         {
+            dano = dano * 10;
             som.Play();
             float d_t = 0.7f;
             collision.GetComponent<jogador>().vida_atual -= dano;

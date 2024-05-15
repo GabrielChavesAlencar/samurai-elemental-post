@@ -24,6 +24,7 @@ public class ataque : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("inimigo"))
         {
+            dano = dano * 10;
             float d_t = 0.7f;
             som.Play();
             if (collision.GetComponent<mob>().atual.tipo != inimigos.lista_insetos.Boss_formiga)

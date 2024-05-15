@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: aranha eletrico
   m_EditorClassIdentifier: 
   tipo: 6
-  vida: 35
+  vida: 350
   velocidade: 10
   ataque: 2
   voador: 1

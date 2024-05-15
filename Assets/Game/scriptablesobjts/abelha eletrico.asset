@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: abelha eletrico
   m_EditorClassIdentifier: 
   tipo: 3
-  vida: 8
+  vida: 80
   velocidade: 15
   ataque: 1
   voador: 1

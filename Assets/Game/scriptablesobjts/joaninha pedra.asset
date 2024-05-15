@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: joaninha pedra
   m_EditorClassIdentifier: 
   tipo: 2
-  vida: 12
+  vida: 120
   velocidade: 8
   ataque: 1
   voador: 0

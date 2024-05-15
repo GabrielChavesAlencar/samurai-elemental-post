@@ -58,10 +58,8 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.4f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\TestarFormato.cs" />
     <Compile Include="Assets\Game\codigos\paralax.cs" />
     <Compile Include="Assets\Game\codigos\ataque_inimigo.cs" />
-    <Compile Include="Assets\UsarRenderTexture.cs" />
     <Compile Include="Assets\Game\codigos\config_sons.cs" />
     <Compile Include="Assets\Game\codigos\hud.cs" />
     <Compile Include="Assets\Game\codigos\SteamScript.cs" />
@@ -80,7 +78,6 @@
     <Compile Include="Assets\Game\codigos\Menu.cs" />
     <Compile Include="Assets\Game\codigos\elementalespera.cs" />
     <Compile Include="Assets\Game\codigos\ativar_arena.cs" />
-    <Compile Include="Assets\MudarFormatoRenderTexture.cs" />
     <Compile Include="Assets\Game\codigos\inimigos.cs" />
     <Compile Include="Assets\Game\codigos\jogador.cs" />
     <Compile Include="Assets\Game\codigos\golpeespecial.cs" />

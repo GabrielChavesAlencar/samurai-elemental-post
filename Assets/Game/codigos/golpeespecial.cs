@@ -17,7 +17,7 @@ public class golpeespecial : MonoBehaviour
     void Start()
     {
         uis = GameObject.FindGameObjectsWithTag("MainCamera")[0].GetComponent<hud>();
-        dano_inicial = dano;
+        dano_inicial = dano*10;
     }
 
     // Update is called once per frame
@@ -30,7 +30,7 @@ public class golpeespecial : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("inimigo"))
         {
-           
+            dano = dano * 10;
             if (!veloz)
             {
                 dano = dano_inicial;
