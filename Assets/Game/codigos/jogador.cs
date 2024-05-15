@@ -50,6 +50,7 @@ public class jogador : MonoBehaviour
     public AudioSource som_queda;
     public AudioSource som_queda2;
     public float poder_countdown;
+    private float tempo_dano_queda;
     // Start is called before the first frame update
     void Start()
     {
@@ -74,6 +75,9 @@ public class jogador : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (tempo_dano_queda > 0) { tempo_dano_queda += Time.deltaTime; }
+        if (tempo_dano_queda > 1) { tempo_dano_queda = 0; }
+
         if (poder_countdown > 0) { poder_countdown += Time.deltaTime; }
         if (poder_countdown > 4) { poder_countdown = 0; }
         if (velocidadey.y < maxY) { maxY = velocidadey.y; }
@@ -426,7 +430,7 @@ public class jogador : MonoBehaviour
             if (esta_no_chao_espada || esta_no_inimigo_espada || esta_no_inimigo)
             {
                 rig.velocity = new Vector2(rig.velocity.x, 0);
-                if (esta_no_inimigo) { vida_atual -= 5;som_queda2.Play(); }
+                if (esta_no_inimigo&& tempo_dano_queda==0&&estado!= "ataque_pulando"&&estado!= "especial_voar") { vida_atual -= 5;som_queda2.Play(); tempo_dano_queda = 0.1f; }
                 mini_pulo();
                
                 impulso_leve();
