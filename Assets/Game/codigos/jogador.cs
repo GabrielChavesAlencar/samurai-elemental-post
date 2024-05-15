@@ -76,7 +76,7 @@ public class jogador : MonoBehaviour
         if (poder_countdown > 0) { poder_countdown += Time.deltaTime; }
         if (poder_countdown > 4) { poder_countdown = 0; }
         if (velocidadey.y < maxY) { maxY = velocidadey.y; }
-        if (transform.position.y < -13) { reiniciarpos();vida_atual -= 2; }
+        if (transform.position.y < -13) { reiniciarpos();}
         if (vida_atual <= 0) { estado = "morte"; vida_atual = 0; }
         if (estado == "morte") { anim.Play("morte"); elemento1est = ""; elemento2est = ""; }
         else if (estado == "dano") {
@@ -117,9 +117,9 @@ public class jogador : MonoBehaviour
             else {
               
                 esta_no_chao = false;
-                if (velocidadey.y < -19 && velocidadey.y > -24 && estado != "ataque_pulando") { dano_queda = true;dano_quedas = 2; }
-                else if (velocidadey.y < -24 && estado != "ataque_pulando") { dano_queda = true; dano_quedas = 4; }
-                else if (velocidadey.y < -30 && estado == "ataque_pulando") { dano_queda = true; dano_quedas = 2; }
+                if (velocidadey.y < -19 && velocidadey.y > -24 && estado != "ataque_pulando") { dano_queda = true;dano_quedas = 1; }
+                else if (velocidadey.y < -24 && estado != "ataque_pulando") { dano_queda = true; dano_quedas = 2; }
+                else if (velocidadey.y < -30 && estado == "ataque_pulando") { dano_queda = true; dano_quedas = 1; }
             }
         
             esta_no_inimigo = Physics2D.OverlapCircle(pe_trans.position, 0.3f, inimigo_layer);
@@ -417,7 +417,9 @@ public class jogador : MonoBehaviour
             if (esta_no_chao_espada || esta_no_inimigo_espada || esta_no_inimigo)
             {
                 rig.velocity = new Vector2(rig.velocity.x, 0);
+                if (esta_no_inimigo) { }
                 mini_pulo();
+               
                 impulso_leve();
                 esta_no_chao_espada = false;
                 desativar_dano();
