@@ -33,10 +33,15 @@ public class hud : MonoBehaviour
     private float tamanho_rect_boss;
 
     public static int almas;
+    public static int almas_inicial;
     public TMP_Text alma_text;
+    public paralax para1;
+    public paralax para2;
     // Start is called before the first frame update
     void Start()
     {
+        almas_inicial = almas;
+        
         texto_invocado = new GameObject[5];
         poderes_invocados = new GameObject[15];
         tamanho_rect = barra_HP.sizeDelta.x;
@@ -51,6 +56,11 @@ public class hud : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (player.GetComponent<jogador>().caiu) {
+            para1.voltar_pos();
+            para2.voltar_pos();
+            player.GetComponent<jogador>().caiu = false;
+        }
         alma_text.text = almas.ToString("000");
         if (Input.anyKey) { tutorial = true; }
         if (!tutorial) { tutorial_obj.SetActive(true); Time.timeScale = 0; }
@@ -58,7 +68,7 @@ public class hud : MonoBehaviour
 
 
         if (player.GetComponent<jogador>().vida_atual <= 0){ tempo_morte += Time.deltaTime; }
-        if (tempo_morte > 3) { SceneManager.LoadScene("jogo"); }
+        if (tempo_morte > 3) { almas = almas_inicial; SceneManager.LoadScene("jogo");  }
         float conta_hp = tamanho_rect * player.GetComponent<jogador>().vida_atual/player.GetComponent<jogador>().vida_Max;
         barra_HP.sizeDelta = new Vector2(conta_hp, barra_HP.sizeDelta.y);
         if (elemento1.sprite == null) { elemento1.color = new Color(0, 0, 0, 0); }
@@ -82,6 +92,7 @@ public class hud : MonoBehaviour
         else if (player.GetComponent<jogador>().elemento2 == "eletrico") { elemento2.sprite = icones_poderes[3]; }
         else if (player.GetComponent<jogador>().elemento2 == "vento") { elemento2.sprite = icones_poderes[4]; }
     }
+    
     public void invocar_poder(Vector3 pos,int num,string elemento) {
         for (int i = 0; i < 15; i++)
         {

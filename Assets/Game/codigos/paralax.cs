@@ -6,10 +6,12 @@ public class paralax : MonoBehaviour
 {
     public GameObject player;
     public GameObject outro;
+
+    public Vector3 pos_inicial;
     // Start is called before the first frame update
     void Start()
     {
-        
+        pos_inicial = transform.localPosition;
     }
 
     // Update is called once per frame
@@ -24,4 +26,5 @@ public class paralax : MonoBehaviour
             }
         }
     }
+    public void voltar_pos() { transform.localPosition = pos_inicial; }
 }

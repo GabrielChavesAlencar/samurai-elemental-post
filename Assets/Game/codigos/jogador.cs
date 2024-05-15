@@ -51,6 +51,7 @@ public class jogador : MonoBehaviour
     public AudioSource som_queda2;
     public float poder_countdown;
     private float tempo_dano_queda;
+    public bool caiu;
     // Start is called before the first frame update
     void Start()
     {
@@ -92,20 +93,7 @@ public class jogador : MonoBehaviour
         }
         else if (estado != "morte"&& estado != "dano")
         {
-            /*
-            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)|| Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
-            {
-                if (esta_no_chao && estado != "poderespecial" && estado != "espera")
-                {
-
-                    rig.AddForce(transform.up * forca_pulo, ForceMode2D.Impulse);
-                    estado = "pulando";
-
-                    if (rig.velocity.y > 15) { rig.velocity = new Vector2(rig.velocity.x, 15); }
-
-                }
-            }
-            */
+            
             if (velocidadey.y < -1) {
                 if (estado != "ataque_pulando" && estado != "especial_voar" && estado != "ataque1" && estado != "ataque2" && estado != "ataque3") {
                     estado = "caindo";
@@ -443,7 +431,7 @@ public class jogador : MonoBehaviour
 
       
     }
-    public void reiniciarpos() { transform.position = pos_inicial; }
+    public void reiniciarpos() { transform.position = pos_inicial;caiu = true; }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("inimigo"))
