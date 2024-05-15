@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 
 public class hud : MonoBehaviour
@@ -30,6 +31,9 @@ public class hud : MonoBehaviour
     public GameObject hp_boss;
     public RectTransform barra_HP_boss;
     private float tamanho_rect_boss;
+
+    public static int almas;
+    public TMP_Text alma_text;
     // Start is called before the first frame update
     void Start()
     {
@@ -47,6 +51,7 @@ public class hud : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        alma_text.text = almas.ToString("000");
         if (Input.anyKey) { tutorial = true; }
         if (!tutorial) { tutorial_obj.SetActive(true); Time.timeScale = 0; }
         else if(tutorial_obj.activeInHierarchy) { tutorial_obj.SetActive(false); Time.timeScale = 1; }

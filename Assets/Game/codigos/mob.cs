@@ -144,6 +144,7 @@ public class mob : MonoBehaviour
             {
                 tempo_morte = 0.94f;
                 float random = Random.Range(0, 10);
+                hud.almas++;
                 //   print(random);
                 if (drop_garantido) { random = 0; }
                 if (random < 3)
