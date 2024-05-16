@@ -5,10 +5,12 @@ using UnityEngine;
 public class desativar_post : MonoBehaviour
 {
     public Animator anim;
+    public bool ativar_post;
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
+        if (ativar_post) { config_sons.postpros = true; }
        
     }
 

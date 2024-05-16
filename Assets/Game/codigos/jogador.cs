@@ -72,10 +72,23 @@ public class jogador : MonoBehaviour
         poder_countdown = 0;
 
     }
+    public void test_poder() {
+        if (Input.GetKey(KeyCode.Alpha1)) { elemento1 = "eletrico";elemento2 = "pedra"; }
+        if (Input.GetKey(KeyCode.Alpha2)) { elemento1 = "eletrico";elemento2 = "eletrico"; }
+        if (Input.GetKey(KeyCode.Alpha3)) { elemento1 = "agua";elemento2 = "pedra"; }
+        if (Input.GetKey(KeyCode.Alpha4)) { elemento1 = "eletrico";elemento2 = "fogo"; }
+        if (Input.GetKey(KeyCode.Alpha5)) { elemento1 = "pedra";elemento2 = "pedra"; }
+        if (Input.GetKey(KeyCode.Alpha6)) { elemento1 = "agua";elemento2 = "agua"; }
+        if (Input.GetKey(KeyCode.Alpha7)) { elemento1 = "fogo";elemento2 = "fogo"; }
+        if (Input.GetKey(KeyCode.Alpha8)) { elemento1 = "agua";elemento2 = "vento"; }
+        if (Input.GetKey(KeyCode.Alpha9)) { elemento1 = "vento"; elemento2 = "vento"; }
+        if (Input.GetKey(KeyCode.Alpha0)) { elemento1 = "vento"; elemento2 = "fogo"; }
+    }
 
     // Update is called once per frame
     void Update()
     {
+        test_poder();
         if (tempo_dano_queda > 0) { tempo_dano_queda += Time.deltaTime; }
         if (tempo_dano_queda > 1) { tempo_dano_queda = 0; }
 

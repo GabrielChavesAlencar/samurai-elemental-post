@@ -17,7 +17,8 @@ public class inimigos : ScriptableObject
         Abelha,
         LouvaDeus,
         Boss_formiga,
-        Aranha
+        Aranha,
+        Barata
 
     }
 
@@ -30,6 +31,7 @@ public class inimigos : ScriptableObject
     public float escala;
     public string elemento;
     public RuntimeAnimatorController anim;
+    public bool Elite;
    
 
 

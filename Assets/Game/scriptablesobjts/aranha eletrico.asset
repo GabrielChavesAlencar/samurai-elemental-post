@@ -20,3 +20,4 @@ MonoBehaviour:
   escala: 1.6
   elemento: eletrico
   anim: {fileID: 9100000, guid: de45b560e97dcbb4597a2c75971fcbca, type: 2}
+  Elite: 1

@@ -745,6 +745,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Unity.Recorder.Editor.csproj">
+      <Project>{D401C323-46B5-DE1F-4FAF-2B27929DE99C}</Project>
+      <Name>Unity.Recorder.Editor</Name>
+    </ProjectReference>
     <ProjectReference Include="com.rlabrecque.steamworks.net.csproj">
       <Project>{7DE55048-CB5D-E37D-DC59-6CA33C7EF495}</Project>
       <Name>com.rlabrecque.steamworks.net</Name>
@@ -829,6 +833,10 @@
       <Project>{34CA2C60-F7BC-64EC-141D-E8D332B42630}</Project>
       <Name>Unity.2D.Aseprite.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.Recorder.csproj">
+      <Project>{9EAAB814-24C4-160B-21F1-67838BD3E8E9}</Project>
+      <Name>Unity.Recorder</Name>
+    </ProjectReference>
     <ProjectReference Include="com.rlabrecque.steamworks.net.editor.csproj">
       <Project>{49DF7756-BAA0-143B-0589-B4EA61B0AAE1}</Project>
       <Name>com.rlabrecque.steamworks.net.editor</Name>
@@ -872,6 +880,10 @@
     <ProjectReference Include="Unity.VisualStudio.Editor.csproj">
       <Project>{D69A313C-70AF-87CF-F296-8B89E366E4BB}</Project>
       <Name>Unity.VisualStudio.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Recorder.Base.csproj">
+      <Project>{76AD1FA6-DD19-C9A8-F951-1A3B50A172A9}</Project>
+      <Name>Unity.Recorder.Base</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEditor.UI.csproj">
       <Project>{B7817995-D59E-7B75-6588-E5DA75D0D6C5}</Project>
