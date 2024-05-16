@@ -37,6 +37,7 @@ public class mob : MonoBehaviour
     public Transform pe_trans;
     public LayerMask inimigo_layer;
     public bool contato;
+  
     // Start is called before the first frame update
     void Start()
     {
@@ -147,6 +148,8 @@ public class mob : MonoBehaviour
                 hud.almas++;
                 //   print(random);
                 if (drop_garantido) { random = 0; }
+                if (atual.Elite) { random = Random.Range(0, 6); }
+                
                 if (random < 3)
                 {
                     if (elemento == "fogo") { uis.invocar_poder(transform.position, 0, "fogo"); }

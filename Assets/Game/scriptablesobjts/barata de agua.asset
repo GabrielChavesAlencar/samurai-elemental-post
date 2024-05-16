@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tipo: 7
   vida: 400
-  velocidade: 10
+  velocidade: 8
   ataque: 2
   voador: 1
   escala: 1.6

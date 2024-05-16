@@ -48,6 +48,7 @@ public class invocador : MonoBehaviour
                 {
                     instancia = Instantiate(mobs, this.transform);
                     if (drop_garantido) { instancia.GetComponent<mob>().drop_garantido = true; }
+                 
                 }
             }
            
@@ -60,6 +61,7 @@ public class invocador : MonoBehaviour
             else if (tipo == lista_insetos.LouvaDeus) { temp_num = 4; }
             else if (tipo == lista_insetos.Boss_formiga) { temp_num = 5; }
             else if (tipo == lista_insetos.Aranha) { temp_num = 6; }
+            else if (tipo == lista_insetos.Barata) { temp_num = 7; }
           
             instancia.GetComponent<mob>().atual = game.inimigos_script[temp_num];
             instancia.GetComponent<mob>().player = player;
