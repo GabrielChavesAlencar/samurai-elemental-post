@@ -37,7 +37,7 @@ public class mob : MonoBehaviour
     public Transform pe_trans;
     public LayerMask inimigo_layer;
     public bool contato;
-  
+    public int indice_voou;
     // Start is called before the first frame update
     void Start()
     {
@@ -115,8 +115,13 @@ public class mob : MonoBehaviour
 
         if (estado == "andando")
         {
-            rig.velocity = new Vector2(velocidade * 10 * lado * Time.fixedDeltaTime, rig.velocity.y);
-          
+            if (indice_voou == 0)
+            {
+                rig.velocity = new Vector2(velocidade * 10 * lado * Time.fixedDeltaTime, rig.velocity.y);
+            }
+            else if (indice_voou == 1) { rig.velocity = new Vector2(rig.velocity.x,velocidade * 10 * lado * Time.fixedDeltaTime); }
+
+
         }
     }
         private void OnEnable()
@@ -180,8 +185,11 @@ public class mob : MonoBehaviour
             if (countdown > 0) { countdown += Time.deltaTime; }
             if (countdown > 0.3f) { countdown = 0; }
         }
-        if (lado > 0) { transform.localScale = new Vector2(escala_inicial.x, transform.localScale.y); }
-        else { transform.localScale = new Vector2(escala_inicial.x * -1, transform.localScale.y); }
+        if (indice_voou == 0)
+        {
+            if (lado > 0) { transform.localScale = new Vector2(escala_inicial.x, transform.localScale.y); }
+            else { transform.localScale = new Vector2(escala_inicial.x * -1, transform.localScale.y); }
+        }
 
         if (countdown_parede > 0.1f && countdown_parede < 0.5f)
         {
@@ -190,9 +198,27 @@ public class mob : MonoBehaviour
 
 
         }
-        if (atual.voador) { countdown_voou += Time.deltaTime; rig.velocity = new Vector2(rig.velocity.x, 0); }
-        if (countdown_voou > 3) { if (estado == "andando") { lado = lado * -1; countdown = 0.01f; countdown_voou = 0; } countdown_parede = 0; }
-        if (countdown_parede > 1) { if (posicao_temp == transform.position.x && estado == "andando") { lado = lado * -1; countdown = 0.01f; } countdown_parede = 0; }
+        if (atual.voador) {
+            if (indice_voou == 0){countdown_voou += Time.deltaTime; rig.velocity = new Vector2(rig.velocity.x, 0);}
+            else if (indice_voou == 1){countdown_voou += Time.deltaTime; rig.velocity = new Vector2(0,rig.velocity.y);}
+        
+        }
+
+
+
+        if (countdown_voou > 3) {
+            if (indice_voou == 0){if (estado == "andando") { lado = lado * -1; countdown = 0.01f; countdown_voou = 0; }countdown_parede = 0;}
+           
+
+        }
+        if (countdown_voou > 6)
+        {
+            if (indice_voou == 1) { if (estado == "andando") { lado = lado * -1; countdown = 0.01f; countdown_voou = 0; } countdown_parede = 0; }
+           
+        }
+
+        if (indice_voou == 0){if (countdown_parede > 1) { if (posicao_temp == transform.position.x && estado == "andando") { lado = lado * -1; countdown = 0.01f; } countdown_parede = 0;  }}
+        else if (indice_voou == 1){if (countdown_parede > 2) { if (posicao_temp == transform.position.x && estado == "andando") { lado = lado * -1; countdown = 0.01f; } countdown_parede = 0;  }}
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {

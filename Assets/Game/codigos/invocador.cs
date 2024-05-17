@@ -14,6 +14,7 @@ public class invocador : MonoBehaviour
     public hud uis;
     public bool invocar_perto;
     public bool drop_garantido;
+    public int indice_voou;
     public enum lista_insetos
     {
         Formiga,
@@ -57,7 +58,7 @@ public class invocador : MonoBehaviour
             if (tipo == lista_insetos.Formiga) { temp_num = 0; }
             else if (tipo == lista_insetos.Tatu) { temp_num = 1; }
             else if (tipo == lista_insetos.Joaninha) { temp_num = 2; }
-            else if (tipo == lista_insetos.Abelha) { temp_num = 3; }
+            else if (tipo == lista_insetos.Abelha) { temp_num = 3; instancia.GetComponent<mob>().indice_voou = indice_voou; }
             else if (tipo == lista_insetos.LouvaDeus) { temp_num = 4; }
             else if (tipo == lista_insetos.Boss_formiga) { temp_num = 5; }
             else if (tipo == lista_insetos.Aranha) { temp_num = 6; }
