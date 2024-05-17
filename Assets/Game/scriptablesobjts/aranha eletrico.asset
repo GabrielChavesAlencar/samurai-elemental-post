@@ -16,7 +16,7 @@ MonoBehaviour:
   vida: 350
   velocidade: 10
   ataque: 2
-  voador: 1
+  voador: 0
   escala: 1.6
   elemento: eletrico
   anim: {fileID: 9100000, guid: de45b560e97dcbb4597a2c75971fcbca, type: 2}

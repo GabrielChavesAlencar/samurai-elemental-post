@@ -10,10 +10,12 @@ public class barreira : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        jogo.num_tela = 5;
         if (jogo.num_tela == 0) {quantidade = hud.almas + 8;}
-        if (jogo.num_tela == 1) {quantidade = hud.almas + 7;}
-        if (jogo.num_tela == 2) {quantidade = hud.almas + 10;}
-        if (jogo.num_tela == 3) {quantidade = hud.almas + 12;}
+        else if (jogo.num_tela == 1) {quantidade = hud.almas + 7;}
+        else if(jogo.num_tela == 2) {quantidade = hud.almas + 10;}
+        else if(jogo.num_tela == 3) {quantidade = hud.almas + 12;}
+        else if(jogo.num_tela == 5) {quantidade = hud.almas + 9;}
     }
 
     // Update is called once per frame

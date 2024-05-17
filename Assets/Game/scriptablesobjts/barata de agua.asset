@@ -15,8 +15,8 @@ MonoBehaviour:
   tipo: 7
   vida: 400
   velocidade: 8
-  ataque: 2
-  voador: 1
+  ataque: 1.5
+  voador: 0
   escala: 1.6
   elemento: agua
   anim: {fileID: 9100000, guid: d59c654d6256a524390de486247a1290, type: 2}

@@ -65,6 +65,7 @@ public class mob : MonoBehaviour
         else if (atual.tipo == inimigos.lista_insetos.Tatu) { dano_obj.GetComponent<ataque_inimigo>().som.clip = dano_obj.GetComponent<ataque_inimigo>().som_ataques[4]; }
         else if (atual.tipo == inimigos.lista_insetos.Boss_formiga) { dano_obj.GetComponent<ataque_inimigo>().som.clip = dano_obj.GetComponent<ataque_inimigo>().som_ataques[1]; }
         else if (atual.tipo == inimigos.lista_insetos.Aranha) { dano_obj.GetComponent<ataque_inimigo>().som.clip = dano_obj.GetComponent<ataque_inimigo>().som_ataques[5]; }
+        else if (atual.tipo == inimigos.lista_insetos.Barata) { dano_obj.GetComponent<ataque_inimigo>().som.clip = dano_obj.GetComponent<ataque_inimigo>().som_ataques[6]; }
         inicializar();
 
     }
