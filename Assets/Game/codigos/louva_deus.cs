@@ -19,4 +19,5 @@ public class louva_deus : mob
     {
         
     }
+     public void impulso_cima() { rig.velocity = new Vector2(rig.velocity.x, 0); rig.AddForce(transform.up * 340, ForceMode2D.Impulse); }
 }

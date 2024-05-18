@@ -5,6 +5,7 @@ using UnityEngine;
 public class invocador : MonoBehaviour
 {
     public GameObject mobs;
+    public GameObject louva;
     public GameObject Boss;
     public GameObject instancia;
     public GameObject player;
@@ -46,6 +47,7 @@ public class invocador : MonoBehaviour
             int temp_num = 0;
             if (instancia == null) {
                 if (tipo == lista_insetos.Boss_formiga) { instancia = Instantiate(Boss, this.transform);uis.hp_boss.SetActive(true); }
+                else if (tipo == lista_insetos.puloLouvaDeus) { instancia = Instantiate(louva, this.transform);}
                 else
                 {
                     instancia = Instantiate(mobs, this.transform);
@@ -64,6 +66,7 @@ public class invocador : MonoBehaviour
             else if (tipo == lista_insetos.Boss_formiga) { temp_num = 5; }
             else if (tipo == lista_insetos.Aranha) { temp_num = 6; }
             else if (tipo == lista_insetos.Barata) { temp_num = 7; }
+            else if (tipo == lista_insetos.puloLouvaDeus) { temp_num = 8; }
           
             instancia.GetComponent<mob>().atual = game.inimigos_script[temp_num];
             instancia.GetComponent<mob>().player = player;

@@ -106,7 +106,7 @@ public class mob : MonoBehaviour
     private void FixedUpdate()
     {
 
-        if (atual.tipo! != inimigos.lista_insetos.Boss_formiga)
+        if (atual.tipo != inimigos.lista_insetos.Boss_formiga&&atual.tipo != inimigos.lista_insetos.puloLouvaDeus)
         {
             andar();
         }

@@ -20,3 +20,4 @@ MonoBehaviour:
   escala: 1.3
   elemento: vento
   anim: {fileID: 9100000, guid: 5fc4f7fc61f10254ea9ce7a022831e79, type: 2}
+  Elite: 0
