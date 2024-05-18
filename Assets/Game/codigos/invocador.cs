@@ -24,7 +24,8 @@ public class invocador : MonoBehaviour
         LouvaDeus,
         Boss_formiga,
         Aranha,
-        Barata
+        Barata,
+        puloLouvaDeus
     }
     public lista_insetos tipo;
     // Start is called before the first frame update

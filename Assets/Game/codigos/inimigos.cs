@@ -18,7 +18,8 @@ public class inimigos : ScriptableObject
         LouvaDeus,
         Boss_formiga,
         Aranha,
-        Barata
+        Barata,
+        puloLouvaDeus
 
     }
 
