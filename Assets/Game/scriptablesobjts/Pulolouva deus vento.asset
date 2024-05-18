@@ -17,7 +17,7 @@ MonoBehaviour:
   velocidade: 10
   ataque: 1
   voador: 0
-  escala: 1.1
+  escala: 0.8
   elemento: vento
   anim: {fileID: 9100000, guid: d9a8f08c84eed3241be3c9dcf2b232c1, type: 2}
   Elite: 0
