@@ -315,32 +315,28 @@ public class mob : MonoBehaviour
         if(num == 0){
 
             GameObject temp = Instantiate(projetil);
-            temp.transform.position = dano_obj.transform.position;
-            if(lado>1){temp.transform.localScale = new Vector3(1,1,1);}
-            else{temp.transform.localScale = new Vector3(-1,1,1);}
+            temp.transform.position = dano_obj.transform.position;     
+            temp.transform.localScale = new Vector3(lado,1,1);
             grupo.GetComponent<local_poderes>().projeteis.Add(temp);
         
         }
         else{
             int controle = 0;
-            for(int i=0;i<num;i++){
-                 GameObject temp = grupo.GetComponent<local_poderes>().projeteis[i];
-                 if(!temp.activeInHierarchy){
+                 GameObject temp = grupo.GetComponent<local_poderes>().projeteis.Find(x => !x.activeInHierarchy);
+
+                 if(temp!=null){
                     temp.transform.position = dano_obj.transform.position;
-                    if(lado>1){temp.transform.localScale = new Vector3(1,1,1);}
-                    else{temp.transform.localScale = new Vector3(-1,1,1);}
                     temp.SetActive(true);
+                    temp.transform.localScale = new Vector3(lado,1,1);          
                     controle = 1;
-                    i = num;
+             
                  }
-            }
             
             if(controle==0){
-                GameObject temp = Instantiate(projetil);
-                temp.transform.position = dano_obj.transform.position;
-                if(lado>1){temp.transform.localScale = new Vector3(1,1,1);}
-                else{temp.transform.localScale = new Vector3(-1,1,1);}
-                grupo.GetComponent<local_poderes>().projeteis.Add(temp);
+                GameObject temp1 = Instantiate(projetil);
+                temp1.transform.position = dano_obj.transform.position;
+                temp1.transform.localScale = new Vector3(lado,1,1);
+                grupo.GetComponent<local_poderes>().projeteis.Add(temp1);
             }
 
         }
