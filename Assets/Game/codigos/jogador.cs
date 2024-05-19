@@ -514,11 +514,11 @@ public class jogador : MonoBehaviour
                     poderes_invocados_lista.Add(temp);
                     poderes_invocados_lista[0].GetComponent<golpeespecial>().dano = 6;
                 }
-                if (indice_poder == 0) { pos_tem = local_poder.transform.position + new Vector3(0, -0.64f, 0); }
-                else if (indice_poder == 1) { pos_tem = local_poder.transform.position + new Vector3(0, -1.3f, 0); }
-                else if (indice_poder == 2) { pos_tem = local_poder.transform.position + new Vector3(0, -0.6f, 0); }
-                else if (indice_poder == 3) { pos_tem = local_poder.transform.position + new Vector3(0, -0.8f, 0); }
-                else if (indice_poder == 4) { pos_tem = local_poder.transform.position + new Vector3(0, -0.8f, 0); }
+                if (indice_poder == 0) { pos_tem = local_poder.transform.position + new Vector3(0, -0.64f, 0);escala_poder=1.3f; }
+                else if (indice_poder == 1) { pos_tem = local_poder.transform.position + new Vector3(0, -1.3f, 0); escala_poder=1.3f;}
+                else if (indice_poder == 2) { pos_tem = local_poder.transform.position + new Vector3(0, -0.6f, 0); escala_poder=1.3f;}
+                else if (indice_poder == 3) { pos_tem = local_poder.transform.position + new Vector3(0, -0.8f, 0); escala_poder=1.3f;}
+                else if (indice_poder == 4) { pos_tem = local_poder.transform.position + new Vector3(0, -0.8f, 0); escala_poder=1.3f;}
                 
 
                else if (indice_poder == 5){poder_local(0,4.5f,-0.6f,2f,7);}
@@ -572,11 +572,11 @@ public class jogador : MonoBehaviour
                         {
                             obj_temp.GetComponent<golpeespecial>().dano = 6;
                         }
-                        if (indice_poder == 0) { pos_tem = local_poder.transform.position + new Vector3(0, -0.64f, 0); }
-                        else if (indice_poder == 1) { pos_tem = local_poder.transform.position + new Vector3(0, -1.3f, 0); }
-                        else if (indice_poder == 2) { pos_tem = local_poder.transform.position + new Vector3(0, -0.6f, 0); }
-                        else if (indice_poder == 3) { pos_tem = local_poder.transform.position + new Vector3(0, -0.8f, 0); }
-                        else if (indice_poder == 4) { pos_tem = local_poder.transform.position + new Vector3(0, -0.8f, 0); }
+                        if (indice_poder == 0) { pos_tem = local_poder.transform.position + new Vector3(0, -0.64f, 0);escala_poder=1.3f; }
+                        else if (indice_poder == 1) { pos_tem = local_poder.transform.position + new Vector3(0, -1.3f, 0); escala_poder=1.3f;}
+                        else if (indice_poder == 2) { pos_tem = local_poder.transform.position + new Vector3(0, -0.6f, 0); escala_poder=1.3f;}
+                        else if (indice_poder == 3) { pos_tem = local_poder.transform.position + new Vector3(0, -0.8f, 0); escala_poder=1.3f;}
+                        else if (indice_poder == 4) { pos_tem = local_poder.transform.position + new Vector3(0, -0.8f, 0);escala_poder=1.3f; }
                         else if (indice_poder == 5){poder_local(i,4.5f,-0.6f,2f,7);}
                 
                         else if (indice_poder == 6){poder_local(i,4.5f,-0.6f,1.5f,7);}
@@ -639,11 +639,11 @@ public class jogador : MonoBehaviour
                     poderes_invocados_lista.Add(obj_temp);
                     obj_temp.GetComponent<golpeespecial>().dano = 6;
                 }
-                if (indice_poder == 0) { pos_tem = local_poder.transform.position + new Vector3(0, -0.64f, 0); }
-                else if (indice_poder == 1) { pos_tem = local_poder.transform.position + new Vector3(0, -1.3f, 0); }
-                else if (indice_poder == 2) { pos_tem = local_poder.transform.position + new Vector3(0, -0.6f, 0); }
-                else if (indice_poder == 3) { pos_tem = local_poder.transform.position + new Vector3(0, -0.8f, 0); }
-                else if (indice_poder == 4) { pos_tem = local_poder.transform.position + new Vector3(0, -0.8f, 0); }
+                if (indice_poder == 0) { pos_tem = local_poder.transform.position + new Vector3(0, -0.64f, 0); escala_poder=1.3f;}
+                else if (indice_poder == 1) { pos_tem = local_poder.transform.position + new Vector3(0, -1.3f, 0); escala_poder=1.3f;}
+                else if (indice_poder == 2) { pos_tem = local_poder.transform.position + new Vector3(0, -0.6f, 0); escala_poder=1.3f;}
+                else if (indice_poder == 3) { pos_tem = local_poder.transform.position + new Vector3(0, -0.8f, 0); escala_poder=1.3f;}
+                else if (indice_poder == 4) { pos_tem = local_poder.transform.position + new Vector3(0, -0.8f, 0); escala_poder=1.3f;}
                 
                 else if (indice_poder == 5){poder_local(i,4.5f,-0.6f,2f,7);}
                 
