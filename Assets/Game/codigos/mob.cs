@@ -95,6 +95,12 @@ public class mob : MonoBehaviour
                     else { lado = 1;}
                 }
             }
+            if(atual.tipo == inimigos.lista_insetos.Abelha&&indice_voou==1){
+                if (distancia > 3){
+                    if (transform.position.x > player.transform.position.x) { transform.localScale = new Vector2(-escala_inicial.x,escala_inicial.y);}
+                    else {transform.localScale = new Vector2(escala_inicial.x,escala_inicial.y);}
+                }
+            }
             if (estado != "impulso")
             {
                 if(atual.tipo == inimigos.lista_insetos.Tatu_pulo){
