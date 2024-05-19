@@ -69,6 +69,7 @@ public class mob : MonoBehaviour
         else if (atual.tipo == inimigos.lista_insetos.Barata) { dano_obj.GetComponent<ataque_inimigo>().som.clip = dano_obj.GetComponent<ataque_inimigo>().som_ataques[6]; }
         else if (atual.tipo == inimigos.lista_insetos.LouvaDeus) { dano_obj.GetComponent<ataque_inimigo>().som.clip = dano_obj.GetComponent<ataque_inimigo>().som_ataques[3]; }
         else if (atual.tipo == inimigos.lista_insetos.Tatu_pulo) { dano_obj.GetComponent<ataque_inimigo>().som.clip = dano_obj.GetComponent<ataque_inimigo>().som_ataques[4]; }
+        else if (atual.tipo == inimigos.lista_insetos.Formiga_Mago) { dano_obj.GetComponent<ataque_inimigo>().som.clip = dano_obj.GetComponent<ataque_inimigo>().som_ataques[1]; }
 
 
 
@@ -121,7 +122,7 @@ public class mob : MonoBehaviour
     private void FixedUpdate()
     {
 
-        if (atual.tipo != inimigos.lista_insetos.Boss_formiga&&atual.tipo != inimigos.lista_insetos.puloLouvaDeus)
+        if (atual.tipo != inimigos.lista_insetos.Formiga_Mago&&atual.tipo != inimigos.lista_insetos.Boss_formiga&&atual.tipo != inimigos.lista_insetos.puloLouvaDeus)
         {
             andar();
         }

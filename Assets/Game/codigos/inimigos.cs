@@ -20,7 +20,8 @@ public class inimigos : ScriptableObject
         Aranha,
         Barata,
         puloLouvaDeus,
-        Tatu_pulo
+        Tatu_pulo,
+        Formiga_Mago
 
     }
 

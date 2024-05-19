@@ -27,7 +27,8 @@ public class invocador : MonoBehaviour
         Aranha,
         Barata,
         puloLouvaDeus,
-        Tatu_pulo
+        Tatu_pulo,
+        Formiga_Mago
     }
     public lista_insetos tipo;
     // Start is called before the first frame update
@@ -69,6 +70,7 @@ public class invocador : MonoBehaviour
             else if (tipo == lista_insetos.Barata) { temp_num = 7; }
             else if (tipo == lista_insetos.puloLouvaDeus) { temp_num = 8; }
             else if (tipo == lista_insetos.Tatu_pulo) { temp_num = 9; }
+            else if (tipo == lista_insetos.Formiga_Mago) { temp_num = 10; }
           
             instancia.GetComponent<mob>().atual = game.inimigos_script[temp_num];
             instancia.GetComponent<mob>().player = player;
