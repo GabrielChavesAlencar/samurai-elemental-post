@@ -188,6 +188,8 @@ MonoBehaviour:
     m_Bits: 64
   contato: 0
   indice_voou: 0
+  projetil: {fileID: 8316720813329771546, guid: d14b8058b27b5484bb903a48a604c606, type: 3}
+  grupo: {fileID: 0}
 --- !u!50 &6184512195333259059
 Rigidbody2D:
   serializedVersion: 4

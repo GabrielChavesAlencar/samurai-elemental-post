@@ -38,10 +38,14 @@ public class mob : MonoBehaviour
     public LayerMask inimigo_layer;
     public bool contato;
     public int indice_voou;
+    public GameObject projetil;
+    public GameObject grupo;
 
     // Start is called before the first frame update
     void Start()
     {
+   
+        grupo = GameObject.FindGameObjectsWithTag("bola_fogo")[0];
         if (drop_garantido) { rastro.SetActive(true); }
         //   som = GetComponent<AudioSource>();
         inicio();
@@ -80,10 +84,17 @@ public class mob : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         countdown_parede += Time.deltaTime;
         acao1();
         if (countdown_dano <= 0&&estado!="morte")
         {
+            if(atual.tipo == inimigos.lista_insetos.Formiga_Mago){
+                if (distancia > 3){
+                    if (transform.position.x > player.transform.position.x) { lado = -1;}
+                    else { lado = 1;}
+                }
+            }
             if (estado != "impulso")
             {
                 if(atual.tipo == inimigos.lista_insetos.Tatu_pulo){
@@ -223,6 +234,7 @@ public class mob : MonoBehaviour
             countdown_voou += Time.deltaTime;
              if (countdown_voou > 10) {lado = lado*-1;countdown_voou=0;}
         }
+        else if(atual.tipo == inimigos.lista_insetos.Formiga_Mago){}
         else{
 
 
@@ -298,7 +310,42 @@ public class mob : MonoBehaviour
         }
     }
 
+    public void poder(){
+        int num = grupo.GetComponent<local_poderes>().projeteis.Count;
+        if(num == 0){
 
+            GameObject temp = Instantiate(projetil);
+            temp.transform.position = dano_obj.transform.position;
+            if(lado>1){temp.transform.localScale = new Vector3(1,1,1);}
+            else{temp.transform.localScale = new Vector3(-1,1,1);}
+            grupo.GetComponent<local_poderes>().projeteis.Add(temp);
+        
+        }
+        else{
+            int controle = 0;
+            for(int i=0;i<num;i++){
+                 GameObject temp = grupo.GetComponent<local_poderes>().projeteis[i];
+                 if(!temp.activeInHierarchy){
+                    temp.transform.position = dano_obj.transform.position;
+                    if(lado>1){temp.transform.localScale = new Vector3(1,1,1);}
+                    else{temp.transform.localScale = new Vector3(-1,1,1);}
+                    temp.SetActive(true);
+                    controle = 1;
+                    i = num;
+                 }
+            }
+            
+            if(controle==0){
+                GameObject temp = Instantiate(projetil);
+                temp.transform.position = dano_obj.transform.position;
+                if(lado>1){temp.transform.localScale = new Vector3(1,1,1);}
+                else{temp.transform.localScale = new Vector3(-1,1,1);}
+                grupo.GetComponent<local_poderes>().projeteis.Add(temp);
+            }
+
+        }
+       
+    }
     public void inicializar() {
         if (atual.voador) { rig.gravityScale = 0; }
         else { rig.gravityScale = 1; }

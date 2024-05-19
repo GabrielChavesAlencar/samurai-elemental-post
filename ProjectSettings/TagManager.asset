@@ -8,6 +8,7 @@ TagManager:
   - inimigo
   - jogador
   - powerup
+  - bola_fogo
   layers:
   - Default
   - TransparentFX

@@ -52,6 +52,7 @@ public class jogador : MonoBehaviour
     public float poder_countdown;
     private float tempo_dano_queda;
     public bool caiu;
+    
     // Start is called before the first frame update
     void Start()
     {
