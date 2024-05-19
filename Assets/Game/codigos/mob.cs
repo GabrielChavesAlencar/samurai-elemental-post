@@ -84,6 +84,7 @@ public class mob : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(distancia>30){gameObject.SetActive(false);}
 
         countdown_parede += Time.deltaTime;
         acao1();
@@ -210,10 +211,11 @@ public class mob : MonoBehaviour
 
             if (countdown_dano > 0) { countdown_dano += Time.deltaTime; estado = "dano"; }
             if (countdown_dano > 0.8f) { countdown_dano = 0; }
-
-            if (estado == "andando") { anim.Play("andando"); }
-            else if (estado == "atacando") { anim.Play("atacando"); }
-            else if (estado == "dano") { if (temp_dano > 0.5f) { anim.Play("dano"); } else { anim.Play("dano2"); } }
+            if(gameObject.activeInHierarchy){
+                if (estado == "andando") { anim.Play("andando"); }
+                else if (estado == "atacando") { anim.Play("atacando"); }
+                else if (estado == "dano") { if (temp_dano > 0.5f) { anim.Play("dano"); } else { anim.Play("dano2"); } }
+            }
 
             if (countdown > 0) { countdown += Time.deltaTime; }
             if (countdown > 0.3f) { countdown = 0; }

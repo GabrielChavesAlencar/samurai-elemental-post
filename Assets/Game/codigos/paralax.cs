@@ -22,7 +22,7 @@ public class paralax : MonoBehaviour
 
         if (transform.localPosition.x < 0.11f) {
             if (transform.localPosition.x > outro.transform.localPosition.x) {
-                outro.transform.localPosition = new Vector2(23.6f,1.08f);
+                outro.transform.localPosition = new Vector3(23.6f,1.08f,10);
             }
         }
     }

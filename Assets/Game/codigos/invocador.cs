@@ -42,7 +42,7 @@ public class invocador : MonoBehaviour
     void Update()
     {
         distancia = Vector2.Distance(player.transform.position, transform.position);
-        if (distancia > 30&&tipo!=lista_insetos.Boss_formiga) { if(instancia!=null)instancia.SetActive(false); }
+      //  if (distancia > 30&&tipo!=lista_insetos.Boss_formiga) { if(instancia!=null)instancia.SetActive(false); }
         if (distancia > 18&& distancia < 30||invocar_perto)
         {
             invocar_perto = false;
@@ -57,9 +57,9 @@ public class invocador : MonoBehaviour
                  
                 }
             }
-           
-            instancia.SetActive(true);
-          
+            if(tipo!=lista_insetos.Boss_formiga){
+                instancia.SetActive(true);
+            }
             if (tipo == lista_insetos.Formiga) { temp_num = 0; }
             else if (tipo == lista_insetos.Tatu) { temp_num = 1; }
             else if (tipo == lista_insetos.Joaninha) { temp_num = 2; }
