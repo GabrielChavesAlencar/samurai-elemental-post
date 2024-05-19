@@ -17,7 +17,12 @@ public class Menu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        if( PlayerPrefs.GetString("Linguagem")==""){
+            
+        }
+        else{
+            Data.languageName = PlayerPrefs.GetString("Linguagem");
+        }
         som = GetComponent<AudioSource>();
     }
     private void Awake()

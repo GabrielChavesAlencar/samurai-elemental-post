@@ -137,5 +137,7 @@ public class config_sons : MonoBehaviour
         else if (num_lingua == 4) { Data.languageName = "ru-RU"; }
         else if (num_lingua == 5) { Data.languageName = "zh-CN"; }
         else if (num_lingua == 6) { Data.languageName = "ja-JP"; }
+
+        PlayerPrefs.SetString("Linguagem",Data.languageName);
     }
 }
