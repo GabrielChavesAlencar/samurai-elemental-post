@@ -21,6 +21,9 @@ public class proximatela : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("jogador"))
         {
+            PlayerPrefs.SetInt("num_tela",num_tela);
+            PlayerPrefs.SetInt("almas", hud.almas);
+           
             Game.trocartela(num_tela);
         }
     }

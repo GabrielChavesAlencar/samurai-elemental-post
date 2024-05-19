@@ -17,6 +17,8 @@ public class Menu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        jogo.num_tela = PlayerPrefs.GetInt("num_tela");
+        hud.almas = PlayerPrefs.GetInt("almas");
         if( PlayerPrefs.GetString("Linguagem")==""){
             
         }
