@@ -38,6 +38,7 @@ public class mob : MonoBehaviour
     public LayerMask inimigo_layer;
     public bool contato;
     public int indice_voou;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -66,7 +67,11 @@ public class mob : MonoBehaviour
         else if (atual.tipo == inimigos.lista_insetos.Boss_formiga) { dano_obj.GetComponent<ataque_inimigo>().som.clip = dano_obj.GetComponent<ataque_inimigo>().som_ataques[1]; }
         else if (atual.tipo == inimigos.lista_insetos.Aranha) { dano_obj.GetComponent<ataque_inimigo>().som.clip = dano_obj.GetComponent<ataque_inimigo>().som_ataques[5]; }
         else if (atual.tipo == inimigos.lista_insetos.Barata) { dano_obj.GetComponent<ataque_inimigo>().som.clip = dano_obj.GetComponent<ataque_inimigo>().som_ataques[6]; }
-          else if (atual.tipo == inimigos.lista_insetos.LouvaDeus) { dano_obj.GetComponent<ataque_inimigo>().som.clip = dano_obj.GetComponent<ataque_inimigo>().som_ataques[3]; }
+        else if (atual.tipo == inimigos.lista_insetos.LouvaDeus) { dano_obj.GetComponent<ataque_inimigo>().som.clip = dano_obj.GetComponent<ataque_inimigo>().som_ataques[3]; }
+        else if (atual.tipo == inimigos.lista_insetos.Tatu_pulo) { dano_obj.GetComponent<ataque_inimigo>().som.clip = dano_obj.GetComponent<ataque_inimigo>().som_ataques[4]; }
+
+
+
         inicializar();
 
     }
@@ -80,8 +85,17 @@ public class mob : MonoBehaviour
         {
             if (estado != "impulso")
             {
-                if (distancia > 2.7f) { estado = "andando"; }
-                else { estado = "atacando"; }
+                if(atual.tipo == inimigos.lista_insetos.Tatu_pulo){
+                    if (distancia > 6&&rig.velocity.y>-0.2f&&rig.velocity.y<0.2f) { 
+
+                        estado = "andando"; 
+                    }
+                    else { estado = "atacando"; }
+                }
+                else{
+                    if (distancia > 2.7f) { estado = "andando"; }
+                    else { estado = "atacando"; }
+                }
             }
         }
         if (Physics2D.OverlapCircle(pe_trans.position, 0.1f, inimigo_layer))
@@ -204,22 +218,29 @@ public class mob : MonoBehaviour
             else if (indice_voou == 1){countdown_voou += Time.deltaTime; rig.velocity = new Vector2(0,rig.velocity.y);}
         
         }
-
-
-
-        if (countdown_voou > 3) {
-            if (indice_voou == 0){if (estado == "andando") { lado = lado * -1; countdown = 0.01f; countdown_voou = 0; }countdown_parede = 0;}
-           
-
+        if(atual.tipo == inimigos.lista_insetos.Tatu_pulo){
+            countdown_voou += Time.deltaTime;
+             if (countdown_voou > 10) {lado = lado*-1;countdown_voou=0;}
         }
-        if (countdown_voou > 6)
-        {
-            if (indice_voou == 1) { if (estado == "andando") { lado = lado * -1; countdown = 0.01f; countdown_voou = 0; } countdown_parede = 0; }
-           
-        }
+        else{
 
-        if (indice_voou == 0){if (countdown_parede > 1) { if (posicao_temp == transform.position.x && estado == "andando") { lado = lado * -1; countdown = 0.01f; } countdown_parede = 0;  }}
-        else if (indice_voou == 1){if (countdown_parede > 2) { if (posicao_temp == transform.position.x && estado == "andando") { lado = lado * -1; countdown = 0.01f; } countdown_parede = 0;  }}
+
+
+            if (countdown_voou > 3) {
+                if (indice_voou == 0){if (estado == "andando") { lado = lado * -1; countdown = 0.01f; countdown_voou = 0; }countdown_parede = 0;}
+            
+
+            }
+            if (countdown_voou > 6)
+            {
+                if (indice_voou == 1) { if (estado == "andando") { lado = lado * -1; countdown = 0.01f; countdown_voou = 0; } countdown_parede = 0; }
+            
+            }
+        
+
+            if (indice_voou == 0){if (countdown_parede > 1) { if (posicao_temp == transform.position.x && estado == "andando") { lado = lado * -1; countdown = 0.01f; } countdown_parede = 0;  }}
+            else if (indice_voou == 1){if (countdown_parede > 2) { if (posicao_temp == transform.position.x && estado == "andando") { lado = lado * -1; countdown = 0.01f; } countdown_parede = 0;  }}
+        }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -237,6 +258,19 @@ public class mob : MonoBehaviour
                 countdown = 0.01f;
             }
         }
+    }
+    public void saltar(){
+        if(rig.velocity.y>-0.2f&&rig.velocity.y<0.2f){
+            impulso_leve();
+         
+         
+            rig.velocity = new Vector2(rig.velocity.x, 0);
+
+            rig.AddForce(transform.up * (400 / 1.7f), ForceMode2D.Impulse);
+       
+        }
+
+
     }
     public void impulso_leve()
     {

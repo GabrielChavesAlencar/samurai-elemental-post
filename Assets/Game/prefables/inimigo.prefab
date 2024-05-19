@@ -187,6 +187,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   contato: 0
+  indice_voou: 0
 --- !u!50 &6184512195333259059
 Rigidbody2D:
   serializedVersion: 4
