@@ -52,7 +52,7 @@ public class elementalespera : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.Home))
         {
-            if (distancia < 1.5f && player.GetComponent<jogador>().elemento2 == "")
+            if (distancia < 1.5f && player.GetComponent<jogador>().elemento2 == ""&&player.GetComponent<jogador>().elemento1 !="")
             {
                 som.clip = sons[1];
                 som.Play();
