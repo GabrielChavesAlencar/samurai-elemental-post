@@ -56,6 +56,7 @@ public class jogador : MonoBehaviour
     public bool caiu;
     public Vector3 pos_tem;
     public float escala_poder;
+    public float dano_especial;
     // Start is called before the first frame update
     void Start()
     {
@@ -514,11 +515,11 @@ public class jogador : MonoBehaviour
                     poderes_invocados_lista.Add(temp);
                     poderes_invocados_lista[0].GetComponent<golpeespecial>().dano = 6;
                 }
-                if (indice_poder == 0) { pos_tem = local_poder.transform.position + new Vector3(0, -0.64f, 0);escala_poder=1.3f; }
-                else if (indice_poder == 1) { pos_tem = local_poder.transform.position + new Vector3(0, -1.3f, 0); escala_poder=1.3f;}
-                else if (indice_poder == 2) { pos_tem = local_poder.transform.position + new Vector3(0, -0.6f, 0); escala_poder=1.3f;}
-                else if (indice_poder == 3) { pos_tem = local_poder.transform.position + new Vector3(0, -0.8f, 0); escala_poder=1.3f;}
-                else if (indice_poder == 4) { pos_tem = local_poder.transform.position + new Vector3(0, -0.8f, 0); escala_poder=1.3f;}
+                if (indice_poder == 0) { pos_tem = local_poder.transform.position + new Vector3(0, -0.64f, 0);escala_poder=1.3f; dano_especial= 6;}
+                else if (indice_poder == 1) { pos_tem = local_poder.transform.position + new Vector3(0, -1.3f, 0); escala_poder=1.3f;dano_especial= 6;}
+                else if (indice_poder == 2) { pos_tem = local_poder.transform.position + new Vector3(0, -0.6f, 0); escala_poder=1.3f;dano_especial= 6;}
+                else if (indice_poder == 3) { pos_tem = local_poder.transform.position + new Vector3(0, -0.8f, 0); escala_poder=1.3f;dano_especial= 6;}
+                else if (indice_poder == 4) { pos_tem = local_poder.transform.position + new Vector3(0, -0.8f, 0); escala_poder=1.3f;dano_especial= 6;}
                 
 
                else if (indice_poder == 5){poder_local(0,4.5f,-0.6f,2f,7);}
@@ -553,6 +554,7 @@ public class jogador : MonoBehaviour
                 {
                     poderes_invocados_lista[0].transform.position = pos_tem;
                     poderes_invocados_lista[0].transform.localScale = new Vector3(escala_poder, escala_poder, 0);
+                    poderes_invocados_lista[0].GetComponent<golpeespecial>().dano = dano_especial;
                  
                 }
                                
@@ -572,11 +574,11 @@ public class jogador : MonoBehaviour
                         {
                             obj_temp.GetComponent<golpeespecial>().dano = 6;
                         }
-                        if (indice_poder == 0) { pos_tem = local_poder.transform.position + new Vector3(0, -0.64f, 0);escala_poder=1.3f; }
-                        else if (indice_poder == 1) { pos_tem = local_poder.transform.position + new Vector3(0, -1.3f, 0); escala_poder=1.3f;}
-                        else if (indice_poder == 2) { pos_tem = local_poder.transform.position + new Vector3(0, -0.6f, 0); escala_poder=1.3f;}
-                        else if (indice_poder == 3) { pos_tem = local_poder.transform.position + new Vector3(0, -0.8f, 0); escala_poder=1.3f;}
-                        else if (indice_poder == 4) { pos_tem = local_poder.transform.position + new Vector3(0, -0.8f, 0);escala_poder=1.3f; }
+                        if (indice_poder == 0) { pos_tem = local_poder.transform.position + new Vector3(0, -0.64f, 0);escala_poder=1.3f;dano_especial= 6; }
+                        else if (indice_poder == 1) { pos_tem = local_poder.transform.position + new Vector3(0, -1.3f, 0); escala_poder=1.3f;dano_especial= 6;}
+                        else if (indice_poder == 2) { pos_tem = local_poder.transform.position + new Vector3(0, -0.6f, 0); escala_poder=1.3f;dano_especial= 6;}
+                        else if (indice_poder == 3) { pos_tem = local_poder.transform.position + new Vector3(0, -0.8f, 0); escala_poder=1.3f;dano_especial= 6;}
+                        else if (indice_poder == 4) { pos_tem = local_poder.transform.position + new Vector3(0, -0.8f, 0);escala_poder=1.3f; dano_especial= 6;}
                         else if (indice_poder == 5){poder_local(i,4.5f,-0.6f,2f,7);}
                 
                         else if (indice_poder == 6){poder_local(i,4.5f,-0.6f,1.5f,7);}
@@ -622,6 +624,7 @@ public class jogador : MonoBehaviour
                             
                             obj_temp.transform.position = pos_tem;
                             obj_temp.transform.localScale = new Vector3(escala_poder, Math.Abs(escala_poder), 0);
+                            obj_temp.GetComponent<golpeespecial>().dano = dano_especial;
                             obj_temp.SetActive(true);
                         
                         }
@@ -639,11 +642,11 @@ public class jogador : MonoBehaviour
                     poderes_invocados_lista.Add(obj_temp);
                     obj_temp.GetComponent<golpeespecial>().dano = 6;
                 }
-                if (indice_poder == 0) { pos_tem = local_poder.transform.position + new Vector3(0, -0.64f, 0); escala_poder=1.3f;}
-                else if (indice_poder == 1) { pos_tem = local_poder.transform.position + new Vector3(0, -1.3f, 0); escala_poder=1.3f;}
-                else if (indice_poder == 2) { pos_tem = local_poder.transform.position + new Vector3(0, -0.6f, 0); escala_poder=1.3f;}
-                else if (indice_poder == 3) { pos_tem = local_poder.transform.position + new Vector3(0, -0.8f, 0); escala_poder=1.3f;}
-                else if (indice_poder == 4) { pos_tem = local_poder.transform.position + new Vector3(0, -0.8f, 0); escala_poder=1.3f;}
+                if (indice_poder == 0) { pos_tem = local_poder.transform.position + new Vector3(0, -0.64f, 0); escala_poder=1.3f;dano_especial= 6;}
+                else if (indice_poder == 1) { pos_tem = local_poder.transform.position + new Vector3(0, -1.3f, 0); escala_poder=1.3f;dano_especial= 6;}
+                else if (indice_poder == 2) { pos_tem = local_poder.transform.position + new Vector3(0, -0.6f, 0); escala_poder=1.3f;dano_especial= 6;}
+                else if (indice_poder == 3) { pos_tem = local_poder.transform.position + new Vector3(0, -0.8f, 0); escala_poder=1.3f;dano_especial= 6;}
+                else if (indice_poder == 4) { pos_tem = local_poder.transform.position + new Vector3(0, -0.8f, 0); escala_poder=1.3f;dano_especial= 6;}
                 
                 else if (indice_poder == 5){poder_local(i,4.5f,-0.6f,2f,7);}
                 
@@ -678,6 +681,7 @@ public class jogador : MonoBehaviour
                 {
                     obj_temp.transform.position = pos_tem;
                     obj_temp.transform.localScale = new Vector3(escala_poder, Math.Abs(escala_poder), 0);
+                    obj_temp.GetComponent<golpeespecial>().dano = dano_especial;
                
                 }
                 
@@ -707,7 +711,8 @@ public class jogador : MonoBehaviour
           
             escala_poder = -escala;
         }
-            poderes_invocados_lista[i].GetComponent<golpeespecial>().dano = damage;
+            //poderes_invocados_lista[i].GetComponent<golpeespecial>().dano = damage;
+            dano_especial = damage;
 
    }
 
