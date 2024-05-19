@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class jogador : MonoBehaviour
 {
@@ -36,6 +37,7 @@ public class jogador : MonoBehaviour
 
     public GameObject[] poderes;
     private GameObject[] poderes_invocados;
+    public List<GameObject> poderes_invocados_lista;
     private int indice_poder;
     public GameObject grupo_poderes;
     public GameObject local_poder;
@@ -52,7 +54,8 @@ public class jogador : MonoBehaviour
     public float poder_countdown;
     private float tempo_dano_queda;
     public bool caiu;
-    
+    public Vector3 pos_tem;
+    public float escala_poder;
     // Start is called before the first frame update
     void Start()
     {
@@ -67,10 +70,12 @@ public class jogador : MonoBehaviour
   
         escala_inicial = transform.localScale;
         estado = "parado";
-        poderes_invocados = new GameObject[20];
+        //poderes_invocados = new GameObject[20];
         pos_inicial = transform.position;
         som = GetComponent<AudioSource>();
         poder_countdown = 0;
+        poderes_invocados_lista = new List<GameObject>();
+       ;
 
     }
     public void test_poder() {
@@ -499,17 +504,15 @@ public class jogador : MonoBehaviour
         }
 
 
-        Vector3 pos_tem = new Vector3(0, 0, 0);
-        for (int i = 0; i < poderes_invocados.Length; i++)
-        {
-
-
-            if (poderes_invocados[i] == null)
+    
+       if (poderes_invocados_lista.Count == 0)
             {
                 if (indice_poder != 12)
                 {
-                    poderes_invocados[i] = Instantiate(poderes[indice_poder], grupo_poderes.transform);
-                    poderes_invocados[i].GetComponent<golpeespecial>().dano = 6;
+                  
+                   GameObject temp = Instantiate(poderes[indice_poder], grupo_poderes.transform);
+                    poderes_invocados_lista.Add(temp);
+                    poderes_invocados_lista[0].GetComponent<golpeespecial>().dano = 6;
                 }
                 if (indice_poder == 0) { pos_tem = local_poder.transform.position + new Vector3(0, -0.64f, 0); }
                 else if (indice_poder == 1) { pos_tem = local_poder.transform.position + new Vector3(0, -1.3f, 0); }
@@ -518,483 +521,194 @@ public class jogador : MonoBehaviour
                 else if (indice_poder == 4) { pos_tem = local_poder.transform.position + new Vector3(0, -0.8f, 0); }
                 
 
-                else if (indice_poder == 5)
-                {
-                    if (transform.localScale.x > 0)
-                    {
-                        pos_tem = local_poder.transform.position + new Vector3(4.5f, -0.6f, 0);
-                        poderes_invocados[i].transform.localScale = new Vector3(2f, 2f, 0);
-                    }
-                    else
-                    {
-                        pos_tem = local_poder.transform.position + new Vector3(-4.5f, -0.6f, 0);
-                        poderes_invocados[i].transform.localScale = new Vector3(-2f, 2f, 0);
-                    }
-                    poderes_invocados[i].GetComponent<golpeespecial>().dano = 7;
-
-
-                }
-                else if (indice_poder == 6)
-                {
-                    if (transform.localScale.x > 0)
-                    {
-                        pos_tem = local_poder.transform.position + new Vector3(4.5f, -0.6f, 0);
-                        poderes_invocados[i].transform.localScale = new Vector3(1.5f, 1.5f, 0);
-                    }
-                    else
-                    {
-                        pos_tem = local_poder.transform.position + new Vector3(-4.5f, -0.6f, 0);
-                        poderes_invocados[i].transform.localScale = new Vector3(-1.5f, 1.5f, 0);
-                    }
-                    poderes_invocados[i].GetComponent<golpeespecial>().dano = 7;
-
-
-                }
-                else if (indice_poder == 7)
-                {
-                    if (transform.localScale.x > 0)
-                    {
-                        pos_tem = local_poder.transform.position + new Vector3(2.5f, -0.6f, 0);
-                        poderes_invocados[i].transform.localScale = new Vector3(1.5f, 1.5f, 0);
-                    }
-                    else
-                    {
-                        pos_tem = local_poder.transform.position + new Vector3(-2.5f, -0.6f, 0);
-                        poderes_invocados[i].transform.localScale = new Vector3(-1.5f, 1.5f, 0);
-                    }
-                    poderes_invocados[i].GetComponent<golpeespecial>().dano = 7;
-
-
-                }
-                else if (indice_poder == 8)
-                {
-                    if (transform.localScale.x > 0)
-                    {
-                        pos_tem = local_poder.transform.position + new Vector3(2.5f, 0.96f, 0);
-                        poderes_invocados[i].transform.localScale = new Vector3(1.8f, 1.8f, 0);
-                    }
-                    else
-                    {
-                        pos_tem = local_poder.transform.position + new Vector3(-2.5f, 0.96f, 0);
-                        poderes_invocados[i].transform.localScale = new Vector3(-1.8f, 1.8f, 0);
-                    }
-                    poderes_invocados[i].GetComponent<golpeespecial>().dano = 7;
-
-
-                }
-                else if (indice_poder == 9)
-                {
-                    if (transform.localScale.x > 0)
-                    {
-                        pos_tem = local_poder.transform.position + new Vector3(3.0f, -1f, 0);
-                        poderes_invocados[i].transform.localScale = new Vector3(1.8f, 1.8f, 0);
-                    }
-                    else
-                    {
-                        pos_tem = local_poder.transform.position + new Vector3(-3.0f, -1f, 0);
-                        poderes_invocados[i].transform.localScale = new Vector3(-1.8f, 1.8f, 0);
-                    }
-                    poderes_invocados[i].GetComponent<golpeespecial>().dano = 7;
-
-
-                }
-                else if (indice_poder == 10)
-                {
-                    if (transform.localScale.x > 0)
-                    {
-                        pos_tem = local_poder.transform.position + new Vector3(3.0f, 0.5f, 0);
-                        poderes_invocados[i].transform.localScale = new Vector3(1.8f, 1.8f, 0);
-                    }
-                    else
-                    {
-                        pos_tem = local_poder.transform.position + new Vector3(-3.0f, 0.5f, 0);
-                        poderes_invocados[i].transform.localScale = new Vector3(-1.8f, 1.8f, 0);
-                    }
-                    poderes_invocados[i].GetComponent<golpeespecial>().dano = 7;
-
-
-                }
-                else if (indice_poder == 11)
-                {
-                    if (transform.localScale.x > 0)
-                    {
-                        pos_tem = local_poder.transform.position + new Vector3(3.0f, 1.0f, 0);
-                        poderes_invocados[i].transform.localScale = new Vector3(1.8f, 1.8f, 0);
-                    }
-                    else
-                    {
-                        pos_tem = local_poder.transform.position + new Vector3(-3.0f, 1.0f, 0);
-                        poderes_invocados[i].transform.localScale = new Vector3(-1.8f, 1.8f, 0);
-                    }
-                    poderes_invocados[i].GetComponent<golpeespecial>().dano = 7;
-
-
-                }
-                else if (indice_poder == 13)
-                {
-                    if (transform.localScale.x > 0)
-                    {
-                        pos_tem = local_poder.transform.position + new Vector3(2.5f, -0.6f, 0);
-                        poderes_invocados[i].transform.localScale = new Vector3(1.0f, 1.0f, 0);
-                    }
-                    else
-                    {
-                        pos_tem = local_poder.transform.position + new Vector3(-2.5f, -0.6f, 0);
-                        poderes_invocados[i].transform.localScale = new Vector3(-1.0f, 1.0f, 0);
-                    }
-                    poderes_invocados[i].GetComponent<golpeespecial>().dano = 15;
-
-
-                }
-                else if (indice_poder == 14)
-                {
-                    if (transform.localScale.x > 0)
-                    {
-                        pos_tem = local_poder.transform.position + new Vector3(3.0f, 0.5f, 0);
-                        poderes_invocados[i].transform.localScale = new Vector3(1.5f, 1.5f, 0);
-                    }
-                    else
-                    {
-                        pos_tem = local_poder.transform.position + new Vector3(-3.0f, 0.5f, 0);
-                        poderes_invocados[i].transform.localScale = new Vector3(-1.5f, 1.5f, 0);
-                    }
-                    poderes_invocados[i].GetComponent<golpeespecial>().dano = 7;
-
-
-                }
-                else if (indice_poder == 15)
-                {
-                    if (transform.localScale.x > 0)
-                    {
-                        pos_tem = local_poder.transform.position + new Vector3(3.0f, 1.5f, 0);
-                        poderes_invocados[i].transform.localScale = new Vector3(1.5f, 1.5f, 0);
-                    }
-                    else
-                    {
-                        pos_tem = local_poder.transform.position + new Vector3(-3.0f, 1.5f, 0);
-                        poderes_invocados[i].transform.localScale = new Vector3(1.5f, 1.5f, 0);
-                    }
-                    poderes_invocados[i].GetComponent<golpeespecial>().dano = 8;
-
-
-                }
-                else if (indice_poder == 16)
-                {
-                    if (transform.localScale.x > 0)
-                    {
-                        pos_tem = local_poder.transform.position + new Vector3(3.0f, 0.5f, 0);
-                        poderes_invocados[i].transform.localScale = new Vector3(1.7f, 1.7f, 0);
-                    }
-                    else
-                    {
-                        pos_tem = local_poder.transform.position + new Vector3(-3.0f, 0.5f, 0);
-                        poderes_invocados[i].transform.localScale = new Vector3(-1.7f, 1.7f, 0);
-                    }
-                    poderes_invocados[i].GetComponent<golpeespecial>().dano = 8;
-
-
-                }
-                else if (indice_poder == 17)
-                {
-                    if (transform.localScale.x > 0)
-                    {
-                        pos_tem = local_poder.transform.position + new Vector3(3.0f, 1f, 0);
-                        poderes_invocados[i].transform.localScale = new Vector3(1.9f, 1.9f, 0);
-                    }
-                    else
-                    {
-                        pos_tem = local_poder.transform.position + new Vector3(-3.0f, 1f, 0);
-                        poderes_invocados[i].transform.localScale = new Vector3(-1.9f, 1.9f, 0);
-                    }
-                    poderes_invocados[i].GetComponent<golpeespecial>().dano = 8;
-
-
-                }
-                else if (indice_poder == 18)
-                {
-                    if (transform.localScale.x > 0)
-                    {
-                        pos_tem = local_poder.transform.position + new Vector3(4.5f, -0.6f, 0);
-                        poderes_invocados[i].transform.localScale = new Vector3(1.5f, 1.5f, 0);
-                    }
-                    else
-                    {
-                        pos_tem = local_poder.transform.position + new Vector3(-4.5f, -0.6f, 0);
-                        poderes_invocados[i].transform.localScale = new Vector3(-1.5f, 1.5f, 0);
-                    }
-                    poderes_invocados[i].GetComponent<golpeespecial>().dano = 16;
-
-
-                }
-                else if (indice_poder == 19)
-                {
-                    if (transform.localScale.x > 0)
-                    {
-                        pos_tem = local_poder.transform.position + new Vector3(2.5f, -0.6f, 0);
-                        poderes_invocados[i].transform.localScale = new Vector3(1.5f, 1.5f, 0);
-                    }
-                    else
-                    {
-                        pos_tem = local_poder.transform.position + new Vector3(-2.5f, -0.6f, 0);
-                        poderes_invocados[i].transform.localScale = new Vector3(-1.5f, 1.5f, 0);
-                    }
-                    poderes_invocados[i].GetComponent<golpeespecial>().dano = 8;
-
-
-                }
+               else if (indice_poder == 5){poder_local(0,4.5f,-0.6f,2f,7);}
+                
+                else if (indice_poder == 6){poder_local(0,4.5f,-0.6f,1.5f,7);}
+               
+                else if (indice_poder == 7){poder_local(0,2.5f,-0.6f,1.5f,7);}
+                
+                else if (indice_poder == 8){poder_local(0,2.5f,0.96f,1.8f,7);}
+                
+                else if (indice_poder == 9){poder_local(0,3f,-1.0f,1.8f,7);}
+                
+                else if (indice_poder == 10){poder_local(0,3f,0.5f,1.8f,7);}
+                
+                else if (indice_poder == 11){poder_local(0,3f,1.0f,1.8f,7);}
+                
+                else if (indice_poder == 13){poder_local(0,2.5f,-0.6f,1.0f,15);}
+                
+                else if (indice_poder == 14){poder_local(0,3f,0.5f,1.5f,7);}
+                
+                else if (indice_poder == 15){poder_local(0,3f,1.5f,1.5f,8);}
+                
+                else if (indice_poder == 16){poder_local(0,3f,0.5f,1.7f,8);}
+               
+                else if (indice_poder == 17){poder_local(0,3f,1f,1.9f,8);}
+                
+                else if (indice_poder == 18){poder_local(0,4.5f,-0.6f,1.5f,16);}
+                
+                else if (indice_poder == 19){poder_local(0,2.5f,-0.6f,1.5f,8);}
 
                 if (indice_poder != 12)
                 {
-                    poderes_invocados[i].transform.position = pos_tem;
+                    poderes_invocados_lista[0].transform.position = pos_tem;
+                    poderes_invocados_lista[0].transform.localScale = new Vector3(escala_poder, escala_poder, 0);
+                 
+                }
+                               
+            
+        }
+        else{ 
+            GameObject obj_temp = poderes_invocados_lista.Find(x => x.GetComponent<golpeespecial>().elemento   ==
+                poderes[indice_poder].GetComponent<golpeespecial>().elemento);
+                int i = 0;
+
+                   
+                if(obj_temp !=null){
+              
+                    if (!obj_temp.activeInHierarchy)
+                    {
+                        if (indice_poder != 12)
+                        {
+                            obj_temp.GetComponent<golpeespecial>().dano = 6;
+                        }
+                        if (indice_poder == 0) { pos_tem = local_poder.transform.position + new Vector3(0, -0.64f, 0); }
+                        else if (indice_poder == 1) { pos_tem = local_poder.transform.position + new Vector3(0, -1.3f, 0); }
+                        else if (indice_poder == 2) { pos_tem = local_poder.transform.position + new Vector3(0, -0.6f, 0); }
+                        else if (indice_poder == 3) { pos_tem = local_poder.transform.position + new Vector3(0, -0.8f, 0); }
+                        else if (indice_poder == 4) { pos_tem = local_poder.transform.position + new Vector3(0, -0.8f, 0); }
+                        else if (indice_poder == 5){poder_local(i,4.5f,-0.6f,2f,7);}
+                
+                        else if (indice_poder == 6){poder_local(i,4.5f,-0.6f,1.5f,7);}
+                    
+                        else if (indice_poder == 7){poder_local(i,2.5f,-0.6f,1.5f,7);}
+                        
+                        else if (indice_poder == 8){poder_local(i,2.5f,0.96f,1.8f,7);}
+                        
+                        else if (indice_poder == 9){poder_local(i,3f,-1.0f,1.8f,7);}
+                        
+                        else if (indice_poder == 10){poder_local(i,3f,0.5f,1.8f,7);}
+                        
+                        else if (indice_poder == 11){poder_local(i,3f,1.0f,1.8f,7);}
+                        else if (indice_poder == 12)
+                        {
+                            obj_veloz.SetActive(true);
+                            if (transform.localScale.x > 0)
+                            {
+
+                            }
+                            else
+                            {
+
+                            }
+                        }
+                         else if (indice_poder == 13){poder_local(i,2.5f,-0.6f,1.0f,15);}
+                
+                        else if (indice_poder == 14){poder_local(i,3f,0.5f,1.5f,7);}
+                        
+                        else if (indice_poder == 15){poder_local(i,3f,1.5f,1.5f,8);}
+                        
+                        else if (indice_poder == 16){poder_local(i,3f,0.5f,1.7f,8);}
+                    
+                        else if (indice_poder == 17){poder_local(i,3f,1f,1.9f,8);}
+                        
+                        else if (indice_poder == 18){poder_local(i,4.5f,-0.6f,1.5f,16);}
+                        
+                        else if (indice_poder == 19){poder_local(i,2.5f,-0.6f,1.5f,8);}
+                       
+
+                        if (indice_poder != 12)
+                        {
+                            
+                            obj_temp.transform.position = pos_tem;
+                            obj_temp.transform.localScale = new Vector3(escala_poder, Math.Abs(escala_poder), 0);
+                            obj_temp.SetActive(true);
+                        
+                        }
+
+
+                        i = 20;
+                    }
+                }
+            else
+            {
+                if (indice_poder != 12)
+                {
+                  
+                    obj_temp = Instantiate(poderes[indice_poder], grupo_poderes.transform);
+                    poderes_invocados_lista.Add(obj_temp);
+                    obj_temp.GetComponent<golpeespecial>().dano = 6;
+                }
+                if (indice_poder == 0) { pos_tem = local_poder.transform.position + new Vector3(0, -0.64f, 0); }
+                else if (indice_poder == 1) { pos_tem = local_poder.transform.position + new Vector3(0, -1.3f, 0); }
+                else if (indice_poder == 2) { pos_tem = local_poder.transform.position + new Vector3(0, -0.6f, 0); }
+                else if (indice_poder == 3) { pos_tem = local_poder.transform.position + new Vector3(0, -0.8f, 0); }
+                else if (indice_poder == 4) { pos_tem = local_poder.transform.position + new Vector3(0, -0.8f, 0); }
+                
+                else if (indice_poder == 5){poder_local(i,4.5f,-0.6f,2f,7);}
+                
+                else if (indice_poder == 6){poder_local(i,4.5f,-0.6f,1.5f,7);}
+               
+                else if (indice_poder == 7){poder_local(i,2.5f,-0.6f,1.5f,7);}
+                
+                else if (indice_poder == 8){poder_local(i,2.5f,0.96f,1.8f,7);}
+                
+                else if (indice_poder == 9){poder_local(i,3f,-1.0f,1.8f,7);}
+                
+                else if (indice_poder == 10){poder_local(i,3f,0.5f,1.8f,7);}
+                
+                else if (indice_poder == 11){poder_local(i,3f,1.0f,1.8f,7);}
+                
+                else if (indice_poder == 13){poder_local(i,2.5f,-0.6f,1.0f,15);}
+                
+                else if (indice_poder == 14){poder_local(i,3f,0.5f,1.5f,7);}
+                
+                else if (indice_poder == 15){poder_local(i,3f,1.5f,1.5f,8);}
+                
+                else if (indice_poder == 16){poder_local(i,3f,0.5f,1.7f,8);}
+               
+                else if (indice_poder == 17){poder_local(i,3f,1f,1.9f,8);}
+                
+                else if (indice_poder == 18){poder_local(i,4.5f,-0.6f,1.5f,16);}
+                
+                else if (indice_poder == 19){poder_local(i,2.5f,-0.6f,1.5f,8);}
+                
+
+                if (indice_poder != 12)
+                {
+                    obj_temp.transform.position = pos_tem;
+                    obj_temp.transform.localScale = new Vector3(escala_poder, Math.Abs(escala_poder), 0);
+               
                 }
                 
 
 
                 i = 20;
                
-            }
-            else if(poderes_invocados[i].GetComponent<golpeespecial>().elemento == poderes[indice_poder].GetComponent<golpeespecial>().elemento)
-            {
-                if (!poderes_invocados[i].activeInHierarchy)
-                {
-                    if (indice_poder != 12)
-                    {
-                        poderes_invocados[i].GetComponent<golpeespecial>().dano = 6;
-                    }
-                    if (indice_poder == 0) { pos_tem = local_poder.transform.position + new Vector3(0, -0.64f, 0); }
-                    else if (indice_poder == 1) { pos_tem = local_poder.transform.position + new Vector3(0, -1.3f, 0); }
-                    else if (indice_poder == 2) { pos_tem = local_poder.transform.position + new Vector3(0, -0.6f, 0); }
-                    else if (indice_poder == 3) { pos_tem = local_poder.transform.position + new Vector3(0, -0.8f, 0); }
-                    else if (indice_poder == 4) { pos_tem = local_poder.transform.position + new Vector3(0, -0.8f, 0); }
-                    else if (indice_poder == 5)
-                    {
-                        if (transform.localScale.x > 0)
-                        {
-                            pos_tem = local_poder.transform.position + new Vector3(4.5f, -0.6f, 0);
-                            poderes_invocados[i].transform.localScale = new Vector3(2f, 2f, 0);
-                        }
-                        else
-                        {
-                            pos_tem = local_poder.transform.position + new Vector3(-4.5f, -0.6f, 0);
-                            poderes_invocados[i].transform.localScale = new Vector3(-2f, 2f, 0);
-                        }
-                        poderes_invocados[i].GetComponent<golpeespecial>().dano = 7;
-                    }
-                    else if (indice_poder == 6)
-                    {
-                        if (transform.localScale.x > 0)
-                        {
-                            pos_tem = local_poder.transform.position + new Vector3(4.5f, -0.6f, 0);
-                            poderes_invocados[i].transform.localScale = new Vector3(1.5f, 1.5f, 0);
-                        }
-                        else
-                        {
-                            pos_tem = local_poder.transform.position + new Vector3(-4.5f, -0.6f, 0);
-                            poderes_invocados[i].transform.localScale = new Vector3(-1.5f, 1.5f, 0);
-                        }
-                        poderes_invocados[i].GetComponent<golpeespecial>().dano = 7;
-                    }
-                    else if (indice_poder == 7)
-                    {
-                        if (transform.localScale.x > 0)
-                        {
-                            pos_tem = local_poder.transform.position + new Vector3(2.5f, -0.6f, 0);
-                            poderes_invocados[i].transform.localScale = new Vector3(1.5f, 1.5f, 0);
-                        }
-                        else
-                        {
-                            pos_tem = local_poder.transform.position + new Vector3(-2.5f, -0.6f, 0);
-                            poderes_invocados[i].transform.localScale = new Vector3(-1.5f, 1.5f, 0);
-                        }
-                        poderes_invocados[i].GetComponent<golpeespecial>().dano = 7;
-                    }
-                    else if (indice_poder == 8)
-                    {
-                        if (transform.localScale.x > 0)
-                        {
-                            pos_tem = local_poder.transform.position + new Vector3(2.5f, 0.96f, 0);
-                            poderes_invocados[i].transform.localScale = new Vector3(1.8f, 1.8f, 0);
-                        }
-                        else
-                        {
-                            pos_tem = local_poder.transform.position + new Vector3(-2.5f, 0.96f, 0);
-                            poderes_invocados[i].transform.localScale = new Vector3(-1.8f, 1.8f, 0);
-                        }
-                        poderes_invocados[i].GetComponent<golpeespecial>().dano = 7;
-                    }
-                    else if (indice_poder == 9)
-                    {
-                        if (transform.localScale.x > 0)
-                        {
-                            pos_tem = local_poder.transform.position + new Vector3(3.0f, -1f, 0);
-                            poderes_invocados[i].transform.localScale = new Vector3(1.8f, 1.8f, 0);
-                        }
-                        else
-                        {
-                            pos_tem = local_poder.transform.position + new Vector3(-3.0f, -1f, 0);
-                            poderes_invocados[i].transform.localScale = new Vector3(-1.8f, 1.8f, 0);
-                        }
-                        poderes_invocados[i].GetComponent<golpeespecial>().dano = 7;
-                    }
-                    else if (indice_poder == 10)
-                    {
-                        if (transform.localScale.x > 0)
-                        {
-                            pos_tem = local_poder.transform.position + new Vector3(3.0f, 0.5f, 0);
-                            poderes_invocados[i].transform.localScale = new Vector3(1.8f, 1.8f, 0);
-                        }
-                        else
-                        {
-                            pos_tem = local_poder.transform.position + new Vector3(-3.0f, 0.5f, 0);
-                            poderes_invocados[i].transform.localScale = new Vector3(-1.8f, 1.8f, 0);
-                        }
-                        poderes_invocados[i].GetComponent<golpeespecial>().dano = 7;
-                    }
-                    else if (indice_poder == 11)
-                    {
-                        if (transform.localScale.x > 0)
-                        {
-                            pos_tem = local_poder.transform.position + new Vector3(3.0f, 1f, 0);
-                            poderes_invocados[i].transform.localScale = new Vector3(1.8f, 1.8f, 0);
-                        }
-                        else
-                        {
-                            pos_tem = local_poder.transform.position + new Vector3(-3.0f, 1f, 0);
-                            poderes_invocados[i].transform.localScale = new Vector3(-1.8f, 1.8f, 0);
-                        }
-                        poderes_invocados[i].GetComponent<golpeespecial>().dano = 7;
-                    }
-                    else if (indice_poder == 12)
-                    {
-                        obj_veloz.SetActive(true);
-                        if (transform.localScale.x > 0)
-                        {
+            
+        }
 
-                        }
-                        else
-                        {
-
-                        }
-                    }
-                    else if (indice_poder == 13)
-                    {
-                        if (transform.localScale.x > 0)
-                        {
-                            pos_tem = local_poder.transform.position + new Vector3(2.5f, -0.6f, 0);
-                            poderes_invocados[i].transform.localScale = new Vector3(1.0f, 1.0f, 0);
-                        }
-                        else
-                        {
-                            pos_tem = local_poder.transform.position + new Vector3(-2.5f, -0.6f, 0);
-                            poderes_invocados[i].transform.localScale = new Vector3(-1.0f, 1.0f, 0);
-                        }
-                        poderes_invocados[i].GetComponent<golpeespecial>().dano = 15;
-                    }
-                    else if (indice_poder == 14)
-                    {
-                        if (transform.localScale.x > 0)
-                        {
-                            pos_tem = local_poder.transform.position + new Vector3(3.0f, 0.5f, 0);
-                            poderes_invocados[i].transform.localScale = new Vector3(1.5f, 1.5f, 0);
-                        }
-                        else
-                        {
-                            pos_tem = local_poder.transform.position + new Vector3(-3.0f, 0.5f, 0);
-                            poderes_invocados[i].transform.localScale = new Vector3(-1.5f, 1.5f, 0);
-                        }
-                        poderes_invocados[i].GetComponent<golpeespecial>().dano = 7;
-                    }
-                    else if (indice_poder == 15)
-                    {
-                        if (transform.localScale.x > 0)
-                        {
-                            pos_tem = local_poder.transform.position + new Vector3(3.0f, 1.5f, 0);
-                            poderes_invocados[i].transform.localScale = new Vector3(1.5f, 1.5f, 0);
-                        }
-                        else
-                        {
-                            pos_tem = local_poder.transform.position + new Vector3(-3.0f, 1.5f, 0);
-                            poderes_invocados[i].transform.localScale = new Vector3(1.5f, 1.5f, 0);
-                        }
-                        poderes_invocados[i].GetComponent<golpeespecial>().dano = 8;
-                    }
-                    else if (indice_poder == 16)
-                    {
-                        if (transform.localScale.x > 0)
-                        {
-                            pos_tem = local_poder.transform.position + new Vector3(3.0f, 0.5f, 0);
-                            poderes_invocados[i].transform.localScale = new Vector3(1.7f, 1.7f, 0);
-                        }
-                        else
-                        {
-                            pos_tem = local_poder.transform.position + new Vector3(-3.0f, 0.5f, 0);
-                            poderes_invocados[i].transform.localScale = new Vector3(-1.7f, 1.7f, 0);
-                        }
-                        poderes_invocados[i].GetComponent<golpeespecial>().dano = 8;
-                    }
-                    else if (indice_poder == 17)
-                    {
-                        if (transform.localScale.x > 0)
-                        {
-                            pos_tem = local_poder.transform.position + new Vector3(3.0f, 1f, 0);
-                            poderes_invocados[i].transform.localScale = new Vector3(1.9f, 1.9f, 0);
-                        }
-                        else
-                        {
-                            pos_tem = local_poder.transform.position + new Vector3(-3.0f, 1f, 0);
-                            poderes_invocados[i].transform.localScale = new Vector3(-1.9f, 1.9f, 0);
-                        }
-                        poderes_invocados[i].GetComponent<golpeespecial>().dano = 8;
-                    }
-                    else if (indice_poder == 18)
-                    {
-                        if (transform.localScale.x > 0)
-                        {
-                            pos_tem = local_poder.transform.position + new Vector3(4.5f, -0.6f, 0);
-                            poderes_invocados[i].transform.localScale = new Vector3(1.5f, 1.5f, 0);
-                        }
-                        else
-                        {
-                            pos_tem = local_poder.transform.position + new Vector3(-4.5f, -0.6f, 0);
-                            poderes_invocados[i].transform.localScale = new Vector3(-1.5f, 1.5f, 0);
-                        }
-                        poderes_invocados[i].GetComponent<golpeespecial>().dano = 16;
-                    }
-                    else if (indice_poder == 19)
-                    {
-                        if (transform.localScale.x > 0)
-                        {
-                            pos_tem = local_poder.transform.position + new Vector3(2.5f, -0.6f, 0);
-                            poderes_invocados[i].transform.localScale = new Vector3(1.5f, 1.5f, 0);
-                        }
-                        else
-                        {
-                            pos_tem = local_poder.transform.position + new Vector3(-2.5f, -0.6f, 0);
-                            poderes_invocados[i].transform.localScale = new Vector3(-1.5f, 1.5f, 0);
-                        }
-                        poderes_invocados[i].GetComponent<golpeespecial>().dano = 8;
-                    }
-
-
-
-
-
-
-                    if (indice_poder != 12)
-                    {
-                        poderes_invocados[i].transform.position = pos_tem;
-                        poderes_invocados[i].SetActive(true);
-                    }
-                    i = 20;
-                }
-            }
-
+            
         }
     }
     public void voltar_parado() { estado = "parado";
 
         obj_veloz.SetActive(false);
     }
-   
+   public void poder_local(int i ,float x,float y,float escala,float damage){
+        if(transform.localScale.x>0){
+             pos_tem = local_poder.transform.position + new Vector3(x, y, 0);
+          
+            escala_poder = escala;
+        }
+        else
+        {
+            pos_tem = local_poder.transform.position + new Vector3(-x, y, 0);
+          
+            escala_poder = -escala;
+        }
+            poderes_invocados_lista[i].GetComponent<golpeespecial>().dano = damage;
+
+   }
 
 }
