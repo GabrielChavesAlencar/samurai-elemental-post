@@ -657,6 +657,30 @@ public static class Data {
                     {"pt-BR","Redefinir"}
                 }
             }
+             ,
+             { "controles_key",new Dictionary<string,string>()
+                {
+                    {"en-US","controls" },
+                    {"ru-RU","управление " },
+                    {"ja-JP","コントロール" },
+                    {"es-ES","controles" },
+                    {"zh-CN","控制器" },
+                    {"de-DE","Steuerung" },
+                    {"pt-BR","controles"}
+                }
+            }
+            ,
+             { "aperte_umbotao_key",new Dictionary<string,string>()
+                {
+                    {"en-US","Press a button" },
+                    {"ru-RU","Нажмите кнопку " },
+                    {"ja-JP","ボタンを押してください" },
+                    {"es-ES","Presiona un botón" },
+                    {"zh-CN","按一下按钮" },
+                    {"de-DE","Drücke eine Taste" },
+                    {"pt-BR","Aperte um botão"}
+                }
+            }
 
 
 

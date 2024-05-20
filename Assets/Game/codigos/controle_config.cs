@@ -22,6 +22,7 @@ public class controle_config : MonoBehaviour
     public static KeyCode chave_sair;
 
     public GameObject menu_controles;
+    public GameObject imagem_aperte;
 
     public Text direita_text; 
     public Text esquerda_text;
@@ -70,8 +71,16 @@ public class controle_config : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        imagem_aperte.SetActive(trocar_botoes);
         if(menu_controles.activeInHierarchy){
             direita_text.text = chave_direita+"";
+            esquerda_text.text = chave_esquerda+"";
+            pulo_text.text = chave_pulo+"";
+            katana_text.text = chave_katana+"";
+            especial_text.text = chave_especial+"";
+            coletar_text.text = chave_coletar+"";
+            combinar_text.text = chave_combinar+"";
+            sair_text.text = chave_sair+"";
         }
         if (Input.anyKeyDown&&trocar_botoes)
         {
