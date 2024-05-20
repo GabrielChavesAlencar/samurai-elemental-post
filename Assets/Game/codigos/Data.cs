@@ -598,7 +598,7 @@ public static class Data {
                 }
             }
             ,
-             { "especial_key",new Dictionary<string,string>()
+             { "especial2_key",new Dictionary<string,string>()
                 {
                     {"en-US","special" },
                     {"ru-RU","специальный" },
@@ -643,6 +643,18 @@ public static class Data {
                     {"zh-CN","暂停" },
                     {"de-DE","Pause" },
                     {"pt-BR","pausa"}
+                }
+            }
+            ,
+             { "alterar_key",new Dictionary<string,string>()
+                {
+                    {"en-US","Remap" },
+                    {"ru-RU","Переназначить " },
+                    {"ja-JP","再割り当て" },
+                    {"es-ES","Reasignar" },
+                    {"zh-CN","重新映射" },
+                    {"de-DE","Neu zuordnen" },
+                    {"pt-BR","Redefinir"}
                 }
             }
 
