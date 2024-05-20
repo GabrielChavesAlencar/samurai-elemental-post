@@ -8,7 +8,7 @@ public class controle_config : MonoBehaviour
 {
     public bool trocar_botoes;
     public string tecla_atual;
-    public int indice;
+    private int indice;
 
      private List<KeyCode> allKeyCodes;
    

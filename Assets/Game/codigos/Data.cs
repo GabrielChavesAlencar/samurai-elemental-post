@@ -549,6 +549,102 @@ public static class Data {
                 }
 
             }
+            ,
+             { "direita_key",new Dictionary<string,string>()
+                {
+                    {"en-US","right" },
+                    {"ru-RU","право" },
+                    {"ja-JP","右" },
+                    {"es-ES","derecha" },
+                    {"zh-CN","右" },
+                    {"de-DE","rechts" },
+                    {"pt-BR","direita"}
+                }
+            }
+            ,
+             { "esquerda_key",new Dictionary<string,string>()
+                {
+                    {"en-US","left" },
+                    {"ru-RU","лево" },
+                    {"ja-JP","左" },
+                    {"es-ES","izquierda" },
+                    {"zh-CN","左" },
+                    {"de-DE","links" },
+                    {"pt-BR","esquerda  "}
+                }
+            }
+            ,
+             { "pulo_key",new Dictionary<string,string>()
+                {
+                    {"en-US","jump" },
+                    {"ru-RU","прыжок" },
+                    {"ja-JP","ジャンプ" },
+                    {"es-ES","salto" },
+                    {"zh-CN","跳跃" },
+                    {"de-DE","Sprung" },
+                    {"pt-BR","pulo"}
+                }
+            }
+            ,
+             { "ataque_key",new Dictionary<string,string>()
+                {
+                    {"en-US","attack" },
+                    {"ru-RU","атака" },
+                    {"ja-JP","攻撃" },
+                    {"es-ES","ataque" },
+                    {"zh-CN","攻击" },
+                    {"de-DE","Angriff" },
+                    {"pt-BR","ataque"}
+                }
+            }
+            ,
+             { "especial_key",new Dictionary<string,string>()
+                {
+                    {"en-US","special" },
+                    {"ru-RU","специальный" },
+                    {"ja-JP","特殊" },
+                    {"es-ES","especial" },
+                    {"zh-CN","特殊" },
+                    {"de-DE","Spezial" },
+                    {"pt-BR","especial"}
+                }
+            }
+            ,
+             { "coletar_key",new Dictionary<string,string>()
+                {
+                    {"en-US","collect" },
+                    {"ru-RU","собирать" },
+                    {"ja-JP","集める" },
+                    {"es-ES","recoger" },
+                    {"zh-CN","收集" },
+                    {"de-DE","sammeln" },
+                    {"pt-BR","coletar"}
+                }
+            }
+            ,
+             { "combinar_key",new Dictionary<string,string>()
+                {
+                    {"en-US","combine" },
+                    {"ru-RU","комбинировать" },
+                    {"ja-JP","組み合わせる" },
+                    {"es-ES","combinar" },
+                    {"zh-CN","组合" },
+                    {"de-DE","kombinieren" },
+                    {"pt-BR","combinar"}
+                }
+            }
+            ,
+             { "pausar_key",new Dictionary<string,string>()
+                {
+                    {"en-US","pause" },
+                    {"ru-RU","пауза" },
+                    {"ja-JP","ポーズ" },
+                    {"es-ES","pausa" },
+                    {"zh-CN","暂停" },
+                    {"de-DE","Pause" },
+                    {"pt-BR","pausa"}
+                }
+            }
 
 
 
