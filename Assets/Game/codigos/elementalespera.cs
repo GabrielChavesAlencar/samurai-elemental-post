@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class elementalespera : MonoBehaviour
 {
@@ -13,11 +14,18 @@ public class elementalespera : MonoBehaviour
 
     public AudioClip [] sons;
     public AudioSource som;
+
+    public Text coletar_text;
+    public Text coletar2_text;
+    public Text combinar_text;
     // Start is called before the first frame update
     void Start()
     {
        
         som = GameObject.FindGameObjectsWithTag("powerup")[0].GetComponent<AudioSource>();
+        coletar_text.text = controle_config.chave_coletar+"";
+        coletar2_text.text = controle_config.chave_coletar+"";
+        combinar_text.text = controle_config.chave_combinar+"";
     }
 
     // Update is called once per frame
