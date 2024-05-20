@@ -19,7 +19,7 @@ public class menu_pausa : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape)) { pausa_obj.SetActive(true); Time.timeScale = 0; }
+        if (Input.GetKeyDown(controle_config.chave_sair)) { pausa_obj.SetActive(true); Time.timeScale = 0; }
     }
     public void ativar_som()
     {
