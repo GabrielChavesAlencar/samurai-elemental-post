@@ -84,7 +84,7 @@ public class controle_config : MonoBehaviour
         }
         if (Input.anyKeyDown&&trocar_botoes)
         {
-         print("precione uma tecla");    
+      //   print("precione uma tecla");    
             foreach (KeyCode key in Enum.GetValues(typeof(KeyCode)))
             {
                 if (Input.GetKeyDown(key))
@@ -101,7 +101,7 @@ public class controle_config : MonoBehaviour
                    
                 trocar_botoes = false;
                        
-                print("trocado: "+key);
+               // print("trocado: "+key);
                     
                    
                 }

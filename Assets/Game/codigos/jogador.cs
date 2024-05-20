@@ -167,10 +167,17 @@ public class jogador : MonoBehaviour
                 }
             }
 
+            if (Input.GetKeyUp(controle_config.chave_direita)) { if (estado == "andando") { estado = "parado"; } }
+            if (Input.GetKeyUp(controle_config.chave_esquerda)) { if (estado == "andando") { estado = "parado"; } }
+
+            /*
             if (Input.GetKeyUp(KeyCode.A)|| Input.GetKeyUp(KeyCode.RightArrow)) { if (estado == "andando") { estado = "parado"; } }
             if (Input.GetKeyUp(KeyCode.D)|| Input.GetKeyUp(KeyCode.LeftArrow)) { if (estado == "andando") { estado = "parado"; } }
+            */
 
-            if (Input.GetKeyUp(KeyCode.RightControl)|| Input.GetKeyUp(KeyCode.LeftControl))
+            // if (Input.GetKeyUp(KeyCode.RightControl)|| Input.GetKeyUp(KeyCode.LeftControl))
+
+            if (Input.GetKeyUp(controle_config.chave_katana))
             {
                 if (estado == "parado" || estado == "andando")
                 {
@@ -191,8 +198,9 @@ public class jogador : MonoBehaviour
                 }
 
             }
+            //if (Input.GetKeyUp(KeyCode.KeypadEnter)|| Input.GetKeyUp(KeyCode.Return))
 
-            if (Input.GetKeyUp(KeyCode.KeypadEnter)|| Input.GetKeyUp(KeyCode.Return))
+            if (Input.GetKeyUp(controle_config.chave_especial))
             {
                 if (elemento1 != "" && estado != "especial_voar"&&poder_countdown==0)
                 {
@@ -393,7 +401,9 @@ public class jogador : MonoBehaviour
         if (estado != "morte" && estado != "dano")
         {
 
-            if (Input.GetKey(KeyCode.D)|| Input.GetKey(KeyCode.RightArrow))
+            //if (Input.GetKey(KeyCode.D)|| Input.GetKey(KeyCode.RightArrow))
+
+            if (Input.GetKey(controle_config.chave_direita))
             {
                 if (estado == "parado" || estado == "andando")
                 {
@@ -407,9 +417,9 @@ public class jogador : MonoBehaviour
                 }
             }
 
+            //if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
 
-
-            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+            if (Input.GetKey(controle_config.chave_esquerda))
             {
                 if (estado == "parado" || estado == "andando")
                 {
@@ -423,7 +433,9 @@ public class jogador : MonoBehaviour
                 }
             }
 
-            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
+            //if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
+
+            if (Input.GetKey(controle_config.chave_pulo))
             {
                 if (esta_no_chao && estado != "poderespecial" && estado != "espera")
                 {

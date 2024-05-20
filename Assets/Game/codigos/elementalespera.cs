@@ -37,7 +37,10 @@ public class elementalespera : MonoBehaviour
         
         }
 
-            if (Input.GetKey(KeyCode.Insert))
+
+        //if (Input.GetKey(KeyCode.Insert))
+
+        if (Input.GetKey(controle_config.chave_coletar))
         {
             if (distancia < 1.5f)
             {
@@ -50,7 +53,11 @@ public class elementalespera : MonoBehaviour
                 gameObject.SetActive(false);
             }
         }
-        if (Input.GetKey(KeyCode.Home))
+
+        //if (Input.GetKey(KeyCode.Home))
+
+
+        if (Input.GetKey(controle_config.chave_combinar))
         {
             if (distancia < 1.5f && player.GetComponent<jogador>().elemento2 == ""&&player.GetComponent<jogador>().elemento1 !="")
             {
