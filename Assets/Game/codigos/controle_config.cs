@@ -21,6 +21,9 @@ public class controle_config : MonoBehaviour
     public static KeyCode chave_combinar;
     public static KeyCode chave_sair;
 
+      public KeyCode chave_test;
+
+
     public GameObject menu_controles;
     public GameObject imagem_aperte;
 

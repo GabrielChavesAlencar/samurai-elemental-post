@@ -16,6 +16,7 @@ public class barreira : MonoBehaviour
         else if(jogo.num_tela == 2) {quantidade = hud.almas + 10;}
         else if(jogo.num_tela == 3) {quantidade = hud.almas + 12;}
         else if(jogo.num_tela == 5) {quantidade = hud.almas + 10;}
+        else if(jogo.num_tela == 6) {quantidade = hud.almas + 14;}
     }
 
     // Update is called once per frame
