@@ -189,6 +189,8 @@ MonoBehaviour:
     m_Bits: 64
   contato: 0
   indice_voou: 0
+  projetil: {fileID: 0}
+  grupo: {fileID: 0}
   dano_obj2: {fileID: 3074034499697514373}
 --- !u!50 &6184512195333259059
 Rigidbody2D:
@@ -455,7 +457,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3, y: 2.5}
+  m_Size: {x: 3, y: 3}
   m_EdgeRadius: 0
 --- !u!114 &7294985788641180583
 MonoBehaviour:
