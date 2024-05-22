@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tipo: 11
   vida: 300
-  velocidade: 15
-  ataque: 1
+  velocidade: 25
+  ataque: 1.5
   voador: 1
   escala: 1.4
-  elemento: eletrico
+  elemento: vento
   anim: {fileID: 9100000, guid: acd18e754fad8c747aab1a83d9716325, type: 2}
   Elite: 1

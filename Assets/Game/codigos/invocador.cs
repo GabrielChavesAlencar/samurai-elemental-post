@@ -72,6 +72,7 @@ public class invocador : MonoBehaviour
             else if (tipo == lista_insetos.puloLouvaDeus) { temp_num = 8; }
             else if (tipo == lista_insetos.Tatu_pulo) { temp_num = 9; }
             else if (tipo == lista_insetos.Formiga_Mago) { temp_num = 10; }
+            else if (tipo == lista_insetos.Cavalocao_Vento) { temp_num = 11; }
           
             instancia.GetComponent<mob>().atual = game.inimigos_script[temp_num];
             instancia.GetComponent<mob>().player = player;
