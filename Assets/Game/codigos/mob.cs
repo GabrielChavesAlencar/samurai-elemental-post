@@ -71,7 +71,7 @@ public class mob : MonoBehaviour
         else if (atual.tipo == inimigos.lista_insetos.Boss_formiga) { dano_obj.GetComponent<ataque_inimigo>().som.clip = dano_obj.GetComponent<ataque_inimigo>().som_ataques[1]; }
         else if (atual.tipo == inimigos.lista_insetos.Aranha) { dano_obj.GetComponent<ataque_inimigo>().som.clip = dano_obj.GetComponent<ataque_inimigo>().som_ataques[5]; }
         else if (atual.tipo == inimigos.lista_insetos.Barata) { dano_obj.GetComponent<ataque_inimigo>().som.clip = dano_obj.GetComponent<ataque_inimigo>().som_ataques[6]; }
-        else if (atual.tipo == inimigos.lista_insetos.LouvaDeus) { dano_obj.GetComponent<ataque_inimigo>().som.clip = dano_obj.GetComponent<ataque_inimigo>().som_ataques[3]; }
+        else if (atual.tipo == inimigos.lista_insetos.puloLouvaDeus) { dano_obj.GetComponent<ataque_inimigo>().som.clip = dano_obj.GetComponent<ataque_inimigo>().som_ataques[3]; }
         else if (atual.tipo == inimigos.lista_insetos.Tatu_pulo) { dano_obj.GetComponent<ataque_inimigo>().som.clip = dano_obj.GetComponent<ataque_inimigo>().som_ataques[4]; }
         else if (atual.tipo == inimigos.lista_insetos.Formiga_Mago) { dano_obj.GetComponent<ataque_inimigo>().som.clip = dano_obj.GetComponent<ataque_inimigo>().som_ataques[1]; }
         else if (atual.tipo == inimigos.lista_insetos.Cavalocao_Vento) { dano_obj.GetComponent<ataque_inimigo>().som.clip = dano_obj.GetComponent<ataque_inimigo>().som_ataques[7]; }
@@ -91,6 +91,7 @@ public class mob : MonoBehaviour
         acao1();
         if (countdown_dano <= 0&&estado!="morte")
         {
+          
             if(atual.tipo == inimigos.lista_insetos.Formiga_Mago){
                 if (distancia > 3){
                     if (transform.position.x > player.transform.position.x) { lado = -1;}
@@ -179,6 +180,7 @@ public class mob : MonoBehaviour
 
         if (estado == "morte")
         {
+             
             desativar_dano();
             anim.Play("morte");
             tempo_morte -= Time.deltaTime / 3;

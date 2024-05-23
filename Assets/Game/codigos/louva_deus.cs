@@ -17,6 +17,10 @@ public class louva_deus : mob
     // Update is called once per frame
     void Update()
     {
+        if (estado == "morte")
+        {
+            desativar_dano2();
+        }
         acao1();
         if (distancia < 3f&&rig.velocity.y>-0.2f&&rig.velocity.y<0.2f) { estado = "atacando";  }     
         else { 
