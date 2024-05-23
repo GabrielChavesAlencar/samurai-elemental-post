@@ -102,7 +102,7 @@ public class jogador : MonoBehaviour
         if (poder_countdown > 0) { poder_countdown += Time.deltaTime; }
         if (poder_countdown > 4) { poder_countdown = 0; }
         if (velocidadey.y < maxY) { maxY = velocidadey.y; }
-        if (transform.position.y < -13) { reiniciarpos();}
+       // if (transform.position.y < -13) { reiniciarpos();}
         if (vida_atual <= 0) { estado = "morte"; vida_atual = 0; }
         if (estado == "morte") { anim.Play("morte"); elemento1est = ""; elemento2est = ""; }
         else if (estado == "dano") {
