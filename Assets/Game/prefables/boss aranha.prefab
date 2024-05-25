@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 765422286901821093}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.12, z: 0}
+  m_LocalPosition: {x: -0.27, y: 0.37, z: 0}
   m_LocalScale: {x: 0.9, y: 0.6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -295,6 +295,9 @@ MonoBehaviour:
   indice_voou: 0
   projetil: {fileID: 0}
   grupo: {fileID: 0}
+  tempo_andandar: 0
+  campo_forca: {fileID: 765422286901821093}
+  indice_escudo: 0
 --- !u!50 &6184512195333259059
 Rigidbody2D:
   serializedVersion: 4
