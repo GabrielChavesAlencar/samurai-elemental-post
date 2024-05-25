@@ -239,7 +239,7 @@ Animator:
   m_GameObject: {fileID: 1274462321727397777}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 62acf51a33645cf45be1512ee40b1824, type: 2}
+  m_Controller: {fileID: 9100000, guid: 8a16998c536d708409049e18e46657dd, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -354,7 +354,7 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.24, y: 0.36}
+  m_Offset: {x: -0.24, y: 0.18}
   m_Size: {x: 2.4, y: 1.24}
   m_Direction: 1
 --- !u!82 &-3630481627038359517
@@ -553,3 +553,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: baf03bbd0b8e1004ea56f73b17540e64, type: 3}
   - {fileID: 8300000, guid: bd0d46f59e8295647887839bab207538, type: 3}
   - {fileID: 8300000, guid: f2a08d2b9c1aa384bb28066c4cc13950, type: 3}
+  - {fileID: 8300000, guid: 2c84b65780d7f15499ad16cc3424820e, type: 3}
+  - {fileID: 8300000, guid: 84607b8db827a274f8ade8273271e105, type: 3}
+  - {fileID: 8300000, guid: f4b23f841ebae854eacc162489846e30, type: 3}
