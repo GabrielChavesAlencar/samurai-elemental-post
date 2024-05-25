@@ -29,7 +29,8 @@ public class invocador : MonoBehaviour
         puloLouvaDeus,
         Tatu_pulo,
         Formiga_Mago,
-        Cavalocao_Vento
+        Cavalocao_Vento,
+        Boss_aranha_eletrica
     }
     public lista_insetos tipo;
     // Start is called before the first frame update

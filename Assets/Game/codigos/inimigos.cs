@@ -22,7 +22,8 @@ public class inimigos : ScriptableObject
         puloLouvaDeus,
         Tatu_pulo,
         Formiga_Mago,
-        Cavalocao_Vento
+        Cavalocao_Vento,
+        Boss_aranha_eletrica
 
     }
 
