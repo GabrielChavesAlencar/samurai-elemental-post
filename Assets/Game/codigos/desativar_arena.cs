@@ -17,7 +17,7 @@ public class desativar_arena : MonoBehaviour
     void Update()
     {
         if (inv.instancia != null) {
-            if (inv.instancia.GetComponent<mob>().vidaatual<=0&& inv.instancia.GetComponent<boss>().vivo) {
+            if (inv.instancia.GetComponent<mob>().vidaatual<=0&& inv.instancia.GetComponent<mob>().vivo) {
                 arena.SetActive(false);
                 hp_boss.SetActive(false);
                 gameObject.SetActive(false);

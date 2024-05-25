@@ -13,6 +13,6 @@ public class boss_aranha : mob
     // Update is called once per frame
     void Update()
     {
-        
+         acao1();
     }
 }

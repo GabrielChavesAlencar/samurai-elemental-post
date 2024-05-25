@@ -75,6 +75,7 @@ public class mob : MonoBehaviour
         else if (atual.tipo == inimigos.lista_insetos.Tatu_pulo) { dano_obj.GetComponent<ataque_inimigo>().som.clip = dano_obj.GetComponent<ataque_inimigo>().som_ataques[4]; }
         else if (atual.tipo == inimigos.lista_insetos.Formiga_Mago) { dano_obj.GetComponent<ataque_inimigo>().som.clip = dano_obj.GetComponent<ataque_inimigo>().som_ataques[1]; }
         else if (atual.tipo == inimigos.lista_insetos.Cavalocao_Vento) { dano_obj.GetComponent<ataque_inimigo>().som.clip = dano_obj.GetComponent<ataque_inimigo>().som_ataques[7]; }
+        else if (atual.tipo == inimigos.lista_insetos.Boss_aranha_eletrica) { dano_obj.GetComponent<ataque_inimigo>().som.clip = dano_obj.GetComponent<ataque_inimigo>().som_ataques[5]; }
 
 
 

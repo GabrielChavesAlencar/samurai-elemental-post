@@ -50,7 +50,7 @@ public class invocador : MonoBehaviour
             invocar_perto = false;
             int temp_num = 0;
             if (instancia == null) {
-                if (tipo == lista_insetos.Boss_formiga) { instancia = Instantiate(Boss, this.transform);uis.hp_boss.SetActive(true); }
+                if (tipo == lista_insetos.Boss_formiga||tipo == lista_insetos.Boss_aranha_eletrica) { instancia = Instantiate(Boss, this.transform);uis.hp_boss.SetActive(true); }
                 else if (tipo == lista_insetos.puloLouvaDeus) { instancia = Instantiate(louva, this.transform);}
                 else
                 {
@@ -74,6 +74,7 @@ public class invocador : MonoBehaviour
             else if (tipo == lista_insetos.Tatu_pulo) { temp_num = 9; }
             else if (tipo == lista_insetos.Formiga_Mago) { temp_num = 10; }
             else if (tipo == lista_insetos.Cavalocao_Vento) { temp_num = 11; }
+            else if (tipo == lista_insetos.Boss_aranha_eletrica) { temp_num = 12; }
           
             instancia.GetComponent<mob>().atual = game.inimigos_script[temp_num];
             instancia.GetComponent<mob>().player = player;
