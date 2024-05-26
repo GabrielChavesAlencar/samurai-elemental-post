@@ -71,7 +71,7 @@ Transform:
   - {fileID: 1358724551595258617}
   - {fileID: 8320261620379752354}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1274462321727397783
 SpriteRenderer:
@@ -181,8 +181,8 @@ MonoBehaviour:
   player: {fileID: 0}
   distancia: 0
   estado: 
-  rig: {fileID: 0}
-  anim: {fileID: 0}
+  rig: {fileID: 6184512195333259059}
+  anim: {fileID: 1274462321727397776}
   lado: -1
   countdown: 0
   countdown_dano: 0
@@ -204,6 +204,7 @@ MonoBehaviour:
   projetil: {fileID: 8316720813329771546, guid: d14b8058b27b5484bb903a48a604c606, type: 3}
   grupo: {fileID: 0}
   invulneravel: 0
+  desativar_distancia: 0
 --- !u!50 &6184512195333259059
 Rigidbody2D:
   serializedVersion: 4

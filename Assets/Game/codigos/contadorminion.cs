@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class contadorminion : MonoBehaviour
 {
+    public boss_aranha bosses;
     
     // Start is called before the first frame update
     void Start()
@@ -19,6 +20,7 @@ public class contadorminion : MonoBehaviour
   
     private void OnDisable()
     {
-        print("funcionou");
+        //print("funcionou");
+        bosses.invocar--;
     }
 }
