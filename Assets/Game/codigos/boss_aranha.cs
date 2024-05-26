@@ -7,6 +7,14 @@ public class boss_aranha : mob
     public float tempo_andandar;
     public GameObject campo_forca;
     public int indice_escudo;
+
+    public GameObject minions;
+
+    public GameObject minon1;
+    public GameObject minon2;
+    public GameObject minon3;
+
+    
     // Start is called before the first frame update
     void Start()
     {

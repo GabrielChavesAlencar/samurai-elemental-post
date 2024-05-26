@@ -295,9 +295,14 @@ MonoBehaviour:
   indice_voou: 0
   projetil: {fileID: 0}
   grupo: {fileID: 0}
+  invulneravel: 0
   tempo_andandar: 0
   campo_forca: {fileID: 765422286901821093}
   indice_escudo: 0
+  minions: {fileID: 1274462321727397777, guid: 5f2ade49deb138b4b92dbbbac889411a, type: 3}
+  minon1: {fileID: 0}
+  minon2: {fileID: 0}
+  minon3: {fileID: 0}
 --- !u!50 &6184512195333259059
 Rigidbody2D:
   serializedVersion: 4
