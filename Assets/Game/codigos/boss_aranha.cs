@@ -14,6 +14,7 @@ public class boss_aranha : mob
     public GameObject minon2;
     public GameObject minon3;
 
+    public int invocar;
     
     // Start is called before the first frame update
     void Start()
@@ -28,11 +29,38 @@ public class boss_aranha : mob
 
         
 
-        if(vidaatual<200){indice_escudo=5;}
-        else if(vidaatual<450){indice_escudo=3;}
-        else if(vidaatual<800){indice_escudo=1;}
+        if(vidaatual<200&&invocar == 0){indice_escudo=5;}
+        else if(vidaatual<450&&invocar == 0){indice_escudo=3;}
+        else if(vidaatual<800&&invocar == 0){indice_escudo=1;}
 
-        if(indice_escudo==1||indice_escudo==3||indice_escudo==5){campo_forca.SetActive(true);invulneravel = true;}
+        if(indice_escudo==1||indice_escudo==3||indice_escudo==5){
+            campo_forca.SetActive(true);
+            invulneravel = true;
+            if(minon1 == null){minon1 = Instantiate(minions); minon1.GetComponent<mob>().player = player; }
+            if(minon2 == null){minon2 = Instantiate(minions); minon2.GetComponent<mob>().player = player;}
+            if(minon3 == null){minon3 = Instantiate(minions); minon3.GetComponent<mob>().player = player;}
+
+            if(invocar == 0&&minon1!=null&&minon2!=null&&minon3!=null){
+                invocar = 3;
+                minon1.GetComponent<mob>().desativar_distancia = true;
+                minon2.GetComponent<mob>().desativar_distancia = true;
+                minon3.GetComponent<mob>().desativar_distancia = true;
+                if (transform.position.x > player.transform.position.x) {
+                    minon1.transform.position = transform.position + new Vector3(-10,0,0);
+                    minon2.transform.position = transform.position + new Vector3(-20,0,0);
+                    minon3.transform.position = transform.position + new Vector3(-30,0,0);
+                }
+                else{
+                    minon1.transform.position = transform.position + new Vector3(10,0,0);
+                    minon2.transform.position = transform.position + new Vector3(20,0,0);
+                    minon3.transform.position = transform.position + new Vector3(30,0,0);
+                }
+
+
+            }
+
+
+        }
         else{campo_forca.SetActive(false);invulneravel = false;}
        //  acao1();
        uis.tamanho_hp_boss(vidaatual, vidamax);

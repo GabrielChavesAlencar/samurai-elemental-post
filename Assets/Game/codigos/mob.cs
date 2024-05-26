@@ -41,6 +41,7 @@ public class mob : MonoBehaviour
     public GameObject projetil;
     public GameObject grupo;
     public bool invulneravel;
+    public bool desativar_distancia;
 
     // Start is called before the first frame update
     void Start()
@@ -87,7 +88,7 @@ public class mob : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(distancia>30){gameObject.SetActive(false);}
+        if(distancia>30&&!desativar_distancia){gameObject.SetActive(false);}
 
         countdown_parede += Time.deltaTime;
         acao1();

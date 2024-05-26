@@ -183,7 +183,7 @@ MonoBehaviour:
   estado: 
   rig: {fileID: 0}
   anim: {fileID: 0}
-  lado: 0
+  lado: -1
   countdown: 0
   countdown_dano: 0
   countdown_parede: 0
