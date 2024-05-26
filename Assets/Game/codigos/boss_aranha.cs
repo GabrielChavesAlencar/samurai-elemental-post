@@ -18,12 +18,14 @@ public class boss_aranha : mob
     {
         distancia = Vector2.Distance(player.transform.position, transform.position);
 
+        
+
         if(vidaatual<200){indice_escudo=5;}
         else if(vidaatual<450){indice_escudo=3;}
         else if(vidaatual<800){indice_escudo=1;}
 
-        if(indice_escudo==1||indice_escudo==3||indice_escudo==5){campo_forca.SetActive(true);}
-        else{campo_forca.SetActive(false);}
+        if(indice_escudo==1||indice_escudo==3||indice_escudo==5){campo_forca.SetActive(true);invulneravel = true;}
+        else{campo_forca.SetActive(false);invulneravel = false;}
        //  acao1();
        uis.tamanho_hp_boss(vidaatual, vidamax);
        if (estado == "andando") { anim.Play("andando"); }

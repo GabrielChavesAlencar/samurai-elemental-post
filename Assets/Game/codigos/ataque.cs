@@ -24,18 +24,19 @@ public class ataque : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("inimigo"))
         {
-            dano = dano * 10;
-            float d_t = 0.7f;
-            som.Play();
-            if (collision.GetComponent<mob>().atual.tipo != inimigos.lista_insetos.Boss_formiga)
-            {
-                collision.GetComponent<mob>().countdown_dano = 0.01f;
+            if(!collision.GetComponent<mob>().invulneravel){
+                dano = dano * 10;
+                float d_t = 0.7f;
+                som.Play();
+                if (collision.GetComponent<mob>().atual.tipo != inimigos.lista_insetos.Boss_formiga)
+                {
+                    collision.GetComponent<mob>().countdown_dano = 0.01f;
+                }
+                collision.GetComponent<mob>().vidaatual -=dano;
+                uis.invocar_texto("" + dano, pos_text.transform.position+ new Vector3(Random.Range(-d_t, d_t), Random.Range(-d_t, d_t), 0),0);
+                if (collision.GetComponent<mob>().temp_dano == 0) { collision.GetComponent<mob>().temp_dano = 1; }
+                else { collision.GetComponent<mob>().temp_dano = 0; }
             }
-            collision.GetComponent<mob>().vidaatual -=dano;
-            uis.invocar_texto("" + dano, pos_text.transform.position+ new Vector3(Random.Range(-d_t, d_t), Random.Range(-d_t, d_t), 0),0);
-            if (collision.GetComponent<mob>().temp_dano == 0) { collision.GetComponent<mob>().temp_dano = 1; }
-            else { collision.GetComponent<mob>().temp_dano = 0; }
-
           
             gameObject.SetActive(false);
         }

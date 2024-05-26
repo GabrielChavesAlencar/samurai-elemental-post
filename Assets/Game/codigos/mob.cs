@@ -40,6 +40,7 @@ public class mob : MonoBehaviour
     public int indice_voou;
     public GameObject projetil;
     public GameObject grupo;
+    public bool invulneravel;
 
     // Start is called before the first frame update
     void Start()

@@ -28,7 +28,7 @@ public class golpeespecial : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("inimigo"))
+        if (collision.gameObject.CompareTag("inimigo")&&!collision.GetComponent<mob>().invulneravel)
         {
             dano = dano * 10;
             if (!veloz)
