@@ -16,6 +16,7 @@ public class invocador : MonoBehaviour
     public bool invocar_perto;
     public bool drop_garantido;
     public int indice_voou;
+    public GameObject icone_boss;
     public enum lista_insetos
     {
         Formiga,
@@ -50,7 +51,12 @@ public class invocador : MonoBehaviour
             invocar_perto = false;
             int temp_num = 0;
             if (instancia == null) {
-                if (tipo == lista_insetos.Boss_formiga||tipo == lista_insetos.Boss_aranha_eletrica) { instancia = Instantiate(Boss, this.transform);uis.hp_boss.SetActive(true); }
+                if (tipo == lista_insetos.Boss_formiga||tipo == lista_insetos.Boss_aranha_eletrica) { 
+                    instancia = Instantiate(Boss, this.transform);
+                    uis.hp_boss.SetActive(true); 
+                    icone_boss.SetActive(true);
+
+                }
                 else if (tipo == lista_insetos.puloLouvaDeus) { instancia = Instantiate(louva, this.transform);}
                 else
                 {

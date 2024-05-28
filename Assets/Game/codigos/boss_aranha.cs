@@ -15,7 +15,7 @@ public class boss_aranha : mob
     public GameObject minon3;
 
     public int invocar;
-    
+    private float tempo_morte2;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,10 +30,10 @@ public class boss_aranha : mob
              
             desativar_dano();
             anim.Play("morte");
-            tempo_morte -= Time.deltaTime / 3;
-            if (tempo_morte > 0.95 && tempo_morte < 1)
+            tempo_morte2 -= Time.deltaTime / 3;
+            if (tempo_morte2 > 0.95 && tempo_morte2 < 1)
             {
-                tempo_morte = 0.94f;
+                tempo_morte2 = 0.94f;
                 float random = Random.Range(0, 10);
                 hud.almas++;
                 //   print(random);
@@ -50,8 +50,8 @@ public class boss_aranha : mob
                 }
             }
 
-            if (tempo_morte < 0) { tempo_morte = 0; vivo = true; gameObject.SetActive(false); }
-            GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, tempo_morte);
+            if (tempo_morte2 < 0) { tempo_morte2 = 0; vivo = true; gameObject.SetActive(false); }
+            GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, tempo_morte2);
             GetComponent<CapsuleCollider2D>().enabled = false;
             rig.velocity = new Vector2(0, 0);
         }

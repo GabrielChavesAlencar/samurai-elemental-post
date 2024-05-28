@@ -238,8 +238,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.00014999509, y: 0.003450036, z: 0}
-    m_Extent: {x: 0.99975, y: 1.00605, z: 0}
+    m_Center: {x: 0.00090003014, y: 0.00395, z: 0}
+    m_Extent: {x: 1.0085, y: 1.00025, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -11676,6 +11676,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trocar_botoes: 0
   tecla_atual: 
+  chave_test: 0
   menu_controles: {fileID: 997341009}
   imagem_aperte: {fileID: 1384102020}
   direita_text: {fileID: 599370310}

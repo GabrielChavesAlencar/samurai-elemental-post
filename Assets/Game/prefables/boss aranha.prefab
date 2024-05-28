@@ -239,7 +239,7 @@ Animator:
   m_GameObject: {fileID: 1274462321727397777}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8a16998c536d708409049e18e46657dd, type: 2}
+  m_Controller: {fileID: 9100000, guid: 0ae80bdda0dd9ef4485aac0605d85db0, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -296,6 +296,7 @@ MonoBehaviour:
   projetil: {fileID: 0}
   grupo: {fileID: 0}
   invulneravel: 0
+  desativar_distancia: 0
   tempo_andandar: 0
   campo_forca: {fileID: 765422286901821093}
   indice_escudo: 0
@@ -303,6 +304,7 @@ MonoBehaviour:
   minon1: {fileID: 0}
   minon2: {fileID: 0}
   minon3: {fileID: 0}
+  invocar: 0
 --- !u!50 &6184512195333259059
 Rigidbody2D:
   serializedVersion: 4

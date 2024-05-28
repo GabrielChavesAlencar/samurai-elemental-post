@@ -17,16 +17,18 @@ public class louva_deus : mob
     // Update is called once per frame
     void Update()
     {
-        if (estado == "morte")
-        {
-            desativar_dano2();
-        }
+      
         acao1();
         if (distancia < 3f&&rig.velocity.y>-0.2f&&rig.velocity.y<0.2f) { estado = "atacando";  }     
         else { 
                 estado = "andando";
                 if (transform.position.x > player.transform.position.x) { lado = -1;}
                 else { lado = 1;}
+        }
+        if (estado == "morte")
+        {
+            desativar_dano();
+            desativar_dano2();
         }
     }
      public void impulso_cima() { rig.velocity = new Vector2(rig.velocity.x, 0); rig.AddForce(transform.up * 340, ForceMode2D.Impulse); }

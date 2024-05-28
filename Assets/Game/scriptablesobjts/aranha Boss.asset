@@ -19,5 +19,5 @@ MonoBehaviour:
   voador: 0
   escala: 4
   elemento: eletrico
-  anim: {fileID: 9100000, guid: 8a16998c536d708409049e18e46657dd, type: 2}
+  anim: {fileID: 9100000, guid: 0ae80bdda0dd9ef4485aac0605d85db0, type: 2}
   Elite: 0

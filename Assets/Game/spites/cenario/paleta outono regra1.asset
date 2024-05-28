@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d1514134bc4fbd41bb739b1b9a49231, type: 3}
   m_Name: paleta outono regra1
   m_EditorClassIdentifier: 
-  m_DefaultSprite: {fileID: 21300000, guid: ff00345da0563d641903c5bd5bb748a4, type: 3}
+  m_DefaultSprite: {fileID: 1377670673, guid: c6db863d2d4e13f4096bc7f29c22978b, type: 3}
   m_DefaultGameObject: {fileID: 0}
   m_DefaultColliderType: 1
   m_TilingRules:
