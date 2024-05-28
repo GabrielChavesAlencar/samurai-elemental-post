@@ -65,7 +65,7 @@ public class invocador : MonoBehaviour
                  
                 }
             }
-            if(tipo!=lista_insetos.Boss_formiga){
+            if(tipo!=lista_insetos.Boss_formiga&&tipo != lista_insetos.Boss_aranha_eletrica){
                 instancia.SetActive(true);
             }
             if (tipo == lista_insetos.Formiga) { temp_num = 0; }
