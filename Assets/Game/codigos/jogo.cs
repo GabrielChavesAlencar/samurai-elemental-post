@@ -20,7 +20,7 @@ public class jogo : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //num_tela = 9;
+        num_tela = 10;
        
         som = GetComponent<AudioSource>();
         som.clip = musicas[num_tela];
@@ -44,6 +44,11 @@ public class jogo : MonoBehaviour
         else if (num_tela == 7) { local_juntas(26.62f, 0, 2.45f, 2); }
         else if (num_tela == 8) { local_juntas(23.08f, 0, 2f, 2); }
         else if (num_tela == 9) { local_juntas(15.94f, 0, 1.8f, 2); }
+        else if (num_tela == 10) { local_juntas(15f, -0.34f, 2.3f, 2); }
+        else if (num_tela == 11) { local_juntas(20.7f, 0, 2.3f, 2); }
+        else if (num_tela == 12) { local_juntas(20.5f, 0, 2f, 2); }
+        else if (num_tela == 13) { local_juntas(19.27f, 0, 2f, 2); }
+        else if (num_tela == 14) { local_juntas(23.71f, 0, 2f, 2); }
         
           //  telas[num_tela].SetActive(true);
             for (int i = 0; i < telas.Length; i++)
