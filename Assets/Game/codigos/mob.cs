@@ -293,7 +293,7 @@ public class mob : MonoBehaviour
          
             rig.velocity = new Vector2(rig.velocity.x, 0);
 
-            rig.AddForce(transform.up * (400 / 1.7f), ForceMode2D.Impulse);
+            rig.AddForce(transform.up * (700 / 1.7f), ForceMode2D.Impulse);
        
         }
 
