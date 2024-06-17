@@ -17,6 +17,8 @@ public class jogo : MonoBehaviour
     public GameObject junta2;
     public AudioClip[] musicas;
     public AudioSource som;
+
+    public Sprite[] arvores_sprite;
     // Start is called before the first frame update
     void Start()
     {
