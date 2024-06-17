@@ -14,6 +14,7 @@ public class arvores : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         render = GetComponent<SpriteRenderer>();
         trocar_imagem();
     }
@@ -47,6 +48,10 @@ public class arvores : MonoBehaviour
     
     public void trocar_imagem(){
         int rand = Random.Range(0,5);
+        int rand2 = Random.Range(0,10);
+        if(jogo.num_tela>4&&jogo.num_tela<10){if(rand2>5){rand = 5;}}
+        if(jogo.num_tela>9&&jogo.num_tela<15){if(rand2>4){rand = 6;}}
+
         render.sprite = game.arvores_sprite[rand];
         if(rand==0||rand ==1||rand ==5){render.color = Color.gray;}
         else{render.color = Color.white;}
