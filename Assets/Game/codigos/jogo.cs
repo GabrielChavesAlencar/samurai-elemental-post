@@ -20,7 +20,7 @@ public class jogo : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //num_tela = 10;
+        num_tela = 0;
        
         som = GetComponent<AudioSource>();
         som.clip = musicas[num_tela];
@@ -28,12 +28,12 @@ public class jogo : MonoBehaviour
         som.Play();
         
         back_render.sprite = backgrunds[num_tela];
-        back_render2.sprite = backgrunds[num_tela];
+        //back_render2.sprite = backgrunds[num_tela];
 
-        junta1.GetComponent<SpriteRenderer>().sprite = backgrunds_juntas[num_tela];
-        junta2.GetComponent<SpriteRenderer>().sprite = backgrunds_juntas[num_tela];
+        //junta1.GetComponent<SpriteRenderer>().sprite = backgrunds_juntas[num_tela];
+       // junta2.GetComponent<SpriteRenderer>().sprite = backgrunds_juntas[num_tela];
 
-
+        /*
         if (num_tela == 0) {local_juntas(17.85f, 0, 2.3f, 2);}
         else if (num_tela == 1) { local_juntas(21.79f, 0, 2.5f, 2); }
         else if (num_tela == 2) { local_juntas(18.98f, 0, 2.3f, 2); }
@@ -49,6 +49,7 @@ public class jogo : MonoBehaviour
         else if (num_tela == 12) { local_juntas(20.5f, 0, 2f, 2); }
         else if (num_tela == 13) { local_juntas(19.27f, 0, 2f, 2); }
         else if (num_tela == 14) { local_juntas(23.71f, 0, 2f, 2); }
+        */
         
           //  telas[num_tela].SetActive(true);
             for (int i = 0; i < telas.Length; i++)
@@ -63,7 +64,7 @@ public class jogo : MonoBehaviour
 
 
     }
-
+    /*
     public void local_juntas(float local1,float local2,float escala,float escala2) {
         junta1.GetComponent<Transform>().localPosition = new Vector2(local1, local2);
         junta1.GetComponent<Transform>().localScale = new Vector2(escala, escala2);
@@ -71,6 +72,7 @@ public class jogo : MonoBehaviour
         junta2.GetComponent<Transform>().localPosition = new Vector2(local1, local2);
         junta2.GetComponent<Transform>().localScale = new Vector2(escala, escala2);
     }
+    */
     // Update is called once per frame
     void Update()
     {
