@@ -33,6 +33,9 @@ public class arvores : MonoBehaviour
             transform.localPosition = new Vector3(18.56f,-1.35f,10);
             // new Vector3(18.56f+outro.transform.position.x,outro.transform.position.y,outro.transform.position.z);
         }
+        if (transform.localPosition.x > 18.56f) {
+            transform.localPosition = new Vector3(-18.56f,-1.35f,10);
+        }
     }
     public void voltar_pos() { transform.localPosition = pos_inicial; }
 }
