@@ -95,7 +95,7 @@ public class jogador : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       // test_poder();
+        test_poder();
         if (tempo_dano_queda > 0) { tempo_dano_queda += Time.deltaTime; }
         if (tempo_dano_queda > 1) { tempo_dano_queda = 0; }
 

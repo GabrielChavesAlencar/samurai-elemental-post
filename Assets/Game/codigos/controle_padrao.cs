@@ -15,6 +15,7 @@ public class controle_padrao : MonoBehaviour
     if(controle_config.chave_especial == KeyCode.None){controle_config.chave_especial = KeyCode.Return;}
     if(controle_config.chave_coletar == KeyCode.None){controle_config.chave_coletar = KeyCode.Insert;}
     if(controle_config.chave_combinar == KeyCode.None){controle_config.chave_combinar = KeyCode.Home;}
+    if(controle_config.chave_sair == KeyCode.None){controle_config.chave_sair = KeyCode.Escape;}
    
     
    }

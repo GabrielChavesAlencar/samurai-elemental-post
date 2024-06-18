@@ -30,7 +30,9 @@ public class menu_pausa : MonoBehaviour
         som.Play();
     }
     public void continuar() {  ativar_som();pausa_obj.SetActive(false);Time.timeScale = 1; }
-    public void restart() { ativar_som(); Time.timeScale = 1; player.elemento1 = jogador.elemento1est;
-        player.elemento2 = jogador.elemento2est; SceneManager.LoadScene("jogo"); }
+    public void restart() { ativar_som(); Time.timeScale = 1;
+    //player.elemento1 = ""; player.elemento2 = ""; 
+    jogador.elemento1est = "";jogador.elemento2est = "";
+    SceneManager.LoadScene("jogo"); }
     public void menu() { ativar_som(); Time.timeScale = 1; SceneManager.LoadScene("menu"); }
 }
