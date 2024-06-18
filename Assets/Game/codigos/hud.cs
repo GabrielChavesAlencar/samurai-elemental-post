@@ -35,8 +35,8 @@ public class hud : MonoBehaviour
     public static int almas;
     public static int almas_inicial;
     public TMP_Text alma_text;
-    public paralax para1;
-    public paralax para2;
+   // public paralax para1;
+    //public paralax para2;
     // Start is called before the first frame update
     void Start()
     {
@@ -57,8 +57,8 @@ public class hud : MonoBehaviour
     void Update()
     {
         if (player.GetComponent<jogador>().caiu) {
-            para1.voltar_pos();
-            para2.voltar_pos();
+           // para1.voltar_pos();
+           // para2.voltar_pos();
             player.GetComponent<jogador>().caiu = false;
         }
         alma_text.text = almas.ToString("000");
