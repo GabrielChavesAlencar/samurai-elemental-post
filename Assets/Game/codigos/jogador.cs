@@ -565,7 +565,7 @@ public class jogador : MonoBehaviour
                 if (indice_poder != 12)
                 {
                     poderes_invocados_lista[0].transform.position = pos_tem;
-                    poderes_invocados_lista[0].transform.localScale = new Vector3(escala_poder, escala_poder, 0);
+                    poderes_invocados_lista[0].transform.localScale = new Vector3(escala_poder, Math.Abs(escala_poder), 0);
                     poderes_invocados_lista[0].GetComponent<golpeespecial>().dano = dano_especial;
                  
                 }
