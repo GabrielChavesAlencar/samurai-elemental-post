@@ -542,7 +542,7 @@ public class jogador : MonoBehaviour
                 
                 else if (indice_poder == 8){poder_local(0,2.5f,0.96f,1.8f,7);}
                 
-                else if (indice_poder == 9){poder_local(0,3f,-1.0f,1.8f,7);}
+                else if (indice_poder == 9){poder_local(0,4.5f,-1.0f,2.3f,7);}
                 
                 else if (indice_poder == 10){poder_local(0,3f,0.5f,1.8f,7);}
                 
@@ -599,7 +599,8 @@ public class jogador : MonoBehaviour
                         
                         else if (indice_poder == 8){poder_local(i,2.5f,0.96f,1.8f,7);}
                         
-                        else if (indice_poder == 9){poder_local(i,3f,-1.0f,1.8f,7);}
+                        else if (indice_poder == 9){poder_local(i,4.5f,-1.0f,2.3f,7);}
+                       
                         
                         else if (indice_poder == 10){poder_local(i,3f,0.5f,1.8f,7);}
                         
@@ -668,7 +669,8 @@ public class jogador : MonoBehaviour
                 
                 else if (indice_poder == 8){poder_local(i,2.5f,0.96f,1.8f,7);}
                 
-                else if (indice_poder == 9){poder_local(i,3f,-1.0f,1.8f,7);}
+                else if (indice_poder == 9){poder_local(i,4.5f,-1.0f,2.3f,7);}
+              
                 
                 else if (indice_poder == 10){poder_local(i,3f,0.5f,1.8f,7);}
                 
