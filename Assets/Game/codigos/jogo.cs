@@ -22,7 +22,7 @@ public class jogo : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        num_tela = 1;
+        //num_tela = 9;
        
         som = GetComponent<AudioSource>();
         som.clip = musicas[num_tela];
