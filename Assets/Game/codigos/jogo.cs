@@ -7,6 +7,7 @@ public class jogo : MonoBehaviour
 {
     public inimigos[] inimigos_script;
     public GameObject[] telas;
+    public GameObject loja;
     public jogador player;
     public static int num_tela;
     public Sprite[] backgrunds;
@@ -18,6 +19,7 @@ public class jogo : MonoBehaviour
     public AudioClip[] musicas;
     public AudioSource som;
 
+  
     public Sprite[] arvores_sprite;
     // Start is called before the first frame update
     void Start()
@@ -38,7 +40,7 @@ public class jogo : MonoBehaviour
 
 
         }
-
+        loja.SetActive(false);
 
 
 
@@ -59,7 +61,20 @@ public class jogo : MonoBehaviour
     public void trocartela(int num) {
         player.elemento1 = jogador.elemento1est;
         player.elemento2 = jogador.elemento2est;
-        num_tela = num;
+        //num_tela = num;
         SceneManager.LoadScene("jogo");
+    }
+
+    public void trocartela_loja(int num) {
+        player.elemento1 = jogador.elemento1est;
+        player.elemento2 = jogador.elemento2est;
+        
+        player.reiniciarpos();
+        transform.position = new Vector3(-1.21f,0.09f,-10);
+        
+        num_tela = num;
+        telas[num-1].SetActive(false);
+        loja.SetActive(true);
+        //SceneManager.LoadScene("jogo");
     }
 }

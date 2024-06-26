@@ -6,6 +6,8 @@ public class proximatela : MonoBehaviour
 {
     public jogo Game;
     public int num_tela;
+
+    public static int num_tela_fixo;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,8 +25,8 @@ public class proximatela : MonoBehaviour
         {
             PlayerPrefs.SetInt("num_tela",num_tela);
             PlayerPrefs.SetInt("almas", hud.almas);
-           
-            Game.trocartela(num_tela);
+            num_tela_fixo = num_tela;
+            Game.trocartela_loja(num_tela);
         }
     }
 }
