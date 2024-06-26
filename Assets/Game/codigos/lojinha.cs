@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class lojinha : MonoBehaviour
 {
@@ -11,6 +13,11 @@ public class lojinha : MonoBehaviour
     public Sprite [] img_elementos;
 
     public int rand;
+
+    public Text mensagem;
+
+    public GameObject obt_text;
+    
     // Start is called before the first frame update
     void Start()
     {
