@@ -6,7 +6,7 @@ using System;
 public class jogador : MonoBehaviour
 {
     public float vida_Max;
-    public float vida_atual;
+    public static float vida_atual;
     public float velocidade;
     public Animator anim;
     public string estado;
@@ -65,7 +65,7 @@ public class jogador : MonoBehaviour
         if (elemento2est == null) { elemento2est = ""; }
         elemento1 = elemento1est;
         elemento2 = elemento2est;
-        vida_atual = vida_Max;
+        if(vida_atual<=0){vida_atual = vida_Max;}
         anim = GetComponent<Animator>();
         rig = GetComponent<Rigidbody2D>();
   

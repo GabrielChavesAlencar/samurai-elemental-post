@@ -27,7 +27,7 @@ public class ataque_inimigo : MonoBehaviour
             dano = dano * 10;
             som.Play();
             float d_t = 0.7f;
-            collision.GetComponent<jogador>().vida_atual -= dano;
+            jogador.vida_atual -= dano;
             collision.GetComponent<jogador>().estado = "dano";
             if (collision.GetComponent<jogador>().temp_dano == 0) { collision.GetComponent<jogador>().temp_dano = 1; }
             else { collision.GetComponent<jogador>().temp_dano = 0; }

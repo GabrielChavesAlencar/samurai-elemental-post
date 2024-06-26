@@ -67,9 +67,9 @@ public class hud : MonoBehaviour
         else if(tutorial_obj.activeInHierarchy) { tutorial_obj.SetActive(false); Time.timeScale = 1; }
 
 
-        if (player.GetComponent<jogador>().vida_atual <= 0){ tempo_morte += Time.deltaTime; }
+        if (jogador.vida_atual <= 0){ tempo_morte += Time.deltaTime; }
         if (tempo_morte > 3) { almas = almas_inicial; SceneManager.LoadScene("jogo");  }
-        float conta_hp = tamanho_rect * player.GetComponent<jogador>().vida_atual/player.GetComponent<jogador>().vida_Max;
+        float conta_hp = tamanho_rect * jogador.vida_atual/player.GetComponent<jogador>().vida_Max;
         barra_HP.sizeDelta = new Vector2(conta_hp, barra_HP.sizeDelta.y);
         if (elemento1.sprite == null) { elemento1.color = new Color(0, 0, 0, 0); }
         else  { elemento1.color = new Color(1, 1, 1, 1); }

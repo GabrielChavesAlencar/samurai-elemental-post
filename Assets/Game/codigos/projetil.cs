@@ -37,7 +37,7 @@ public class projetil : MonoBehaviour
         {
              float d_t = 0.7f;
             uis.invocar_texto("" + dano,transform.position + new Vector3(Random.Range(-d_t, d_t), Random.Range(-d_t, d_t), 0),0);
-            collision.GetComponent<jogador>().vida_atual -= dano;
+            jogador.vida_atual -= dano;
             collision.GetComponent<jogador>().estado = "dano";
             tempo = 0;
             gameObject.SetActive(false);
