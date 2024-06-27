@@ -10,6 +10,10 @@ public class jogo : MonoBehaviour
     public GameObject loja;
     public jogador player;
     public static int num_tela;
+    
+    public static int num_pocao;
+    public static int num_pocaoAzul;
+    public static int nivel_armadura;
     public Sprite[] backgrunds;
     public Sprite[] backgrunds_juntas;
     public SpriteRenderer back_render;

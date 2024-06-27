@@ -17,6 +17,11 @@ public class lojinha : MonoBehaviour
     public Text mensagem;
 
     public GameObject obt_text;
+
+    public item_mensagem item1;
+    public item_mensagem item2;
+    public item_mensagem item3;
+    public item_mensagem item4;
     
     // Start is called before the first frame update
     void Start()
@@ -30,5 +35,34 @@ public class lojinha : MonoBehaviour
     void Update()
     {
         
+        if(item1.ativado){
+            obt_text.SetActive(true);mensagem.text = "poção";
+            if (Input.GetKey(controle_config.chave_coletar)&&hud.almas>=5){
+                hud.almas-=5;
+                jogo.num_pocao++;
+            }
+        
+        }
+        else if(item2.ativado){
+            obt_text.SetActive(true);mensagem.text = "poção azul";
+            if (Input.GetKey(controle_config.chave_coletar)&&hud.almas>=20){
+                hud.almas-=20;
+                jogo.num_pocaoAzul++;
+            }
+        
+        }
+        else if(item3.ativado){
+            obt_text.SetActive(true);mensagem.text = "elemento";
+            if (Input.GetKey(controle_config.chave_coletar)&&hud.almas>=10){}
+        }
+        else if(item4.ativado){
+            obt_text.SetActive(true);mensagem.text = "armadura";
+            if (Input.GetKey(controle_config.chave_coletar)&&hud.almas>=70){
+                hud.almas-=70;
+                jogo.nivel_armadura++;
+            }
+        
+        }
+        else{obt_text.SetActive(false);}
     }
 }
