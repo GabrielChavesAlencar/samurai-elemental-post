@@ -76,7 +76,7 @@ public class jogador : MonoBehaviour
         som = GetComponent<AudioSource>();
         poder_countdown = 0;
         poderes_invocados_lista = new List<GameObject>();
-       ;
+       
 
     }
     public void test_poder() {
@@ -114,8 +114,22 @@ public class jogador : MonoBehaviour
         else if (estado != "morte"&& estado != "dano")
         {
             
+            if (estado == "parado") {
+                if (Input.GetKeyUp(controle_config.chave_usarItem)) {
+                    if(hud.num_item==0&&jogo.num_pocao>0){
+                        estado = "usando_item";
+                        
+                    }
+                    else if(hud.num_item==1&&jogo.num_pocaoAzul>0){
+                        estado = "usando_pocaoAzul";
+                    }
+                }
 
-            if (Input.GetKeyUp(controle_config.chave_usarItem)) { estado = "usando_item";}
+                if (Input.GetKeyUp(controle_config.chave_trocarItem)) {
+                    if(hud.num_item==0){hud.num_item=1;}
+                    else{hud.num_item=0;}
+                }
+            }
 
             if (velocidadey.y < -1) {
                 if (estado != "ataque_pulando" && estado != "especial_voar" && estado != "ataque1" && estado != "ataque2" && estado != "ataque3") {
@@ -156,6 +170,7 @@ public class jogador : MonoBehaviour
             else if (estado == "poderespecial") { anim.Play("poderespecial"); }
             else if (estado == "caindo") { anim.Play("caindo"); }
             else if (estado == "usando_item") { anim.Play("player usando pocao"); }
+            else if (estado == "usando_pocaoAzul") { anim.Play("usando_pocaoAzul"); }
             else if (estado == "ataque_pulando")
             {
                 anim.Play("ataque_aereo");
@@ -462,6 +477,9 @@ public class jogador : MonoBehaviour
 
       
     }
+    public void pocao_azul(){
+        jogo.num_pocaoAzul--;
+    }
     public void reiniciarpos() { transform.position = pos_inicial;caiu = true; }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -715,6 +733,7 @@ public class jogador : MonoBehaviour
    public void curar(){
      vida_atual= vida_atual+(vida_Max/2);
      if(vida_atual>vida_Max){vida_atual= vida_Max;}
+     jogo.num_pocao--;
    }
    public void poder_local(int i ,float x,float y,float escala,float damage){
         if(transform.localScale.x>0){

@@ -39,7 +39,7 @@ public class hud : MonoBehaviour
     public TMP_Text alma_text;
     public TMP_Text quantidade_item;
 
-    public int num_item;
+    public static int num_item;
     public Image item_slot;
     public Sprite[] img_itens;
 
@@ -63,6 +63,8 @@ public class hud : MonoBehaviour
     {
         if(num_item ==0){quantidade_item.text="x"+jogo.num_pocao;item_slot.sprite=img_itens[0];item_segurado.sprite=img_itens[0];}
         else if(num_item ==1){quantidade_item.text="x"+jogo.num_pocaoAzul;item_slot.sprite=img_itens[1];item_segurado.sprite=img_itens[1];}
+
+        
 
         if (player.GetComponent<jogador>().caiu) {
            // para1.voltar_pos();
