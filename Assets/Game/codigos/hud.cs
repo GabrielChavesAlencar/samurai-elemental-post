@@ -17,6 +17,8 @@ public class hud : MonoBehaviour
     public GameObject grupo_iP;
     public GameObject player;
 
+    public SpriteRenderer item_segurado;
+
     public Image elemento1;
     public Image elemento2;
 
@@ -41,10 +43,6 @@ public class hud : MonoBehaviour
     public Image item_slot;
     public Sprite[] img_itens;
 
-
-   // public paralax para1;
-    //public paralax para2;
-    // Start is called before the first frame update
     void Start()
     {
         almas_inicial = almas;
@@ -63,8 +61,8 @@ public class hud : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(num_item ==0){quantidade_item.text="x"+jogo.num_pocao;item_slot.sprite=img_itens[0];}
-        else if(num_item ==1){quantidade_item.text="x"+jogo.num_pocaoAzul;item_slot.sprite=img_itens[1];}
+        if(num_item ==0){quantidade_item.text="x"+jogo.num_pocao;item_slot.sprite=img_itens[0];item_segurado.sprite=img_itens[0];}
+        else if(num_item ==1){quantidade_item.text="x"+jogo.num_pocaoAzul;item_slot.sprite=img_itens[1];item_segurado.sprite=img_itens[1];}
 
         if (player.GetComponent<jogador>().caiu) {
            // para1.voltar_pos();

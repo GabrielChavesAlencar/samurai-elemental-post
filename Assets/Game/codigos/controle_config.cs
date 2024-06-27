@@ -21,6 +21,9 @@ public class controle_config : MonoBehaviour
     public static KeyCode chave_combinar;
     public static KeyCode chave_sair;
 
+    public static KeyCode chave_usarItem;
+    public static KeyCode chave_trocarItem;
+
       public KeyCode chave_test;
 
 

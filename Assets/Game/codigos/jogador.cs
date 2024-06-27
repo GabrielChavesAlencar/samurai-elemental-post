@@ -114,6 +114,9 @@ public class jogador : MonoBehaviour
         else if (estado != "morte"&& estado != "dano")
         {
             
+
+            if (Input.GetKeyUp(controle_config.chave_usarItem)) { estado = "usando_item";}
+
             if (velocidadey.y < -1) {
                 if (estado != "ataque_pulando" && estado != "especial_voar" && estado != "ataque1" && estado != "ataque2" && estado != "ataque3") {
                     estado = "caindo";
@@ -152,6 +155,7 @@ public class jogador : MonoBehaviour
             else if (estado == "especial_voar") { anim.Play("especial_voar"); }
             else if (estado == "poderespecial") { anim.Play("poderespecial"); }
             else if (estado == "caindo") { anim.Play("caindo"); }
+            else if (estado == "usando_item") { anim.Play("player usando pocao"); }
             else if (estado == "ataque_pulando")
             {
                 anim.Play("ataque_aereo");
@@ -170,12 +174,7 @@ public class jogador : MonoBehaviour
             if (Input.GetKeyUp(controle_config.chave_direita)) { if (estado == "andando") { estado = "parado"; } }
             if (Input.GetKeyUp(controle_config.chave_esquerda)) { if (estado == "andando") { estado = "parado"; } }
 
-            /*
-            if (Input.GetKeyUp(KeyCode.A)|| Input.GetKeyUp(KeyCode.RightArrow)) { if (estado == "andando") { estado = "parado"; } }
-            if (Input.GetKeyUp(KeyCode.D)|| Input.GetKeyUp(KeyCode.LeftArrow)) { if (estado == "andando") { estado = "parado"; } }
-            */
 
-            // if (Input.GetKeyUp(KeyCode.RightControl)|| Input.GetKeyUp(KeyCode.LeftControl))
 
             if (Input.GetKeyUp(controle_config.chave_katana))
             {
@@ -198,7 +197,7 @@ public class jogador : MonoBehaviour
                 }
 
             }
-            //if (Input.GetKeyUp(KeyCode.KeypadEnter)|| Input.GetKeyUp(KeyCode.Return))
+
 
             if (Input.GetKeyUp(controle_config.chave_especial))
             {
@@ -713,6 +712,10 @@ public class jogador : MonoBehaviour
 
         obj_veloz.SetActive(false);
     }
+   public void curar(){
+     vida_atual= vida_atual+(vida_Max/2);
+     if(vida_atual>vida_Max){vida_atual= vida_Max;}
+   }
    public void poder_local(int i ,float x,float y,float escala,float damage){
         if(transform.localScale.x>0){
              pos_tem = local_poder.transform.position + new Vector3(x, y, 0);
