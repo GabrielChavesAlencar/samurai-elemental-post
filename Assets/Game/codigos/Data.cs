@@ -681,6 +681,58 @@ public static class Data {
                     {"pt-BR","Aperte um botão"}
                 }
             }
+            ,
+             { "press_key_loja",new Dictionary<string,string>()
+                {
+                    {"en-US","Press" },
+                    {"ru-RU","Нажмите" },
+                    {"ja-JP","アイテムを購入するには" },
+                    {"es-ES","Presiona" },
+                    {"zh-CN","按" },
+                    {"de-DE","Drücke" },
+                    {"pt-BR","Pressione"}
+                }
+
+            }
+             ,
+             { "paraComprar_key",new Dictionary<string,string>()
+                {
+                    {"en-US","to purchase the item." },
+                    {"ru-RU",", чтобы купить предмет." },
+                    {"ja-JP","を押してください。" },
+                    {"es-ES","para comprar el artículo." },
+                    {"zh-CN","购买物品。" },
+                    {"de-DE",", um den Gegenstand zu kaufen." },
+                    {"pt-BR","para comprar o item. "}
+                }
+
+            }
+             ,
+             { "descricao_pocao",new Dictionary<string,string>()
+                {
+                    {"en-US","A potion that heals half of your maximum health." },
+                    {"ru-RU","Зелье, которое восстанавливает половину вашего максимального здоровья." },
+                    {"ja-JP","最大体力値の半分を回復するポーション。" },
+                    {"es-ES","Una poción que cura la mitad de tu salud máxima." },
+                    {"zh-CN","一瓶可以恢复你最大生命值一半的药水。" },
+                    {"de-DE","Ein Trank, der die Hälfte deiner maximalen Gesundheit heilt." },
+                    {"pt-BR","Uma poção que cura metade da sua vida máxima."}
+                }
+
+            }
+             ,
+             { "paraUsar_key",new Dictionary<string,string>()
+                {
+                    {"en-US","to use the item." },
+                    {"ru-RU",", чтобы использовать предмет." },
+                    {"ja-JP","を押してください。" },
+                    {"es-ES","para usar el objeto." },
+                    {"zh-CN","使用物品。" },
+                    {"de-DE",", um den Gegenstand zu benutzen." },
+                    {"pt-BR","para usar o item."}
+                }
+
+            }
 
 
 

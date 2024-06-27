@@ -47,6 +47,11 @@ public class jogo : MonoBehaviour
         }
         loja.SetActive(false);
 
+        num_pocao = PlayerPrefs.GetInt("pocoes");
+        num_pocaoAzul = PlayerPrefs.GetInt("pocoesAzul");
+        nivel_armadura = PlayerPrefs.GetInt("armadura");
+
+
 
 
     }

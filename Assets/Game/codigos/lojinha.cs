@@ -52,6 +52,8 @@ public class lojinha : MonoBehaviour
             if (Input.GetKeyDown(controle_config.chave_coletar)&&hud.almas>=5){
                 hud.almas-=5;
                 jogo.num_pocao++;
+                PlayerPrefs.SetInt("almas", hud.almas);
+                PlayerPrefs.SetInt("pocoes", jogo.num_pocao);
             }
         
         }
@@ -60,6 +62,8 @@ public class lojinha : MonoBehaviour
             if (Input.GetKeyDown(controle_config.chave_coletar)&&hud.almas>=20){
                 hud.almas-=20;
                 jogo.num_pocaoAzul++;
+                PlayerPrefs.SetInt("almas", hud.almas);
+                PlayerPrefs.SetInt("pocoesAzul", jogo.num_pocaoAzul);
             }
         
         }
@@ -72,6 +76,8 @@ public class lojinha : MonoBehaviour
             if (Input.GetKeyDown(controle_config.chave_coletar)&&hud.almas>=70){
                 hud.almas-=70;
                 jogo.nivel_armadura=1;
+                PlayerPrefs.SetInt("almas", hud.almas);
+                PlayerPrefs.SetInt("armadura", 1);
             }
         
         }
@@ -80,6 +86,8 @@ public class lojinha : MonoBehaviour
             if (Input.GetKeyDown(controle_config.chave_coletar)&&hud.almas>=150){
                 hud.almas-=150;
                 jogo.nivel_armadura=2;
+                PlayerPrefs.SetInt("almas", hud.almas);
+                PlayerPrefs.SetInt("armadura", 2);
             }
         
         }
