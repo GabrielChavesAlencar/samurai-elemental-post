@@ -57,6 +57,8 @@ public class jogador : MonoBehaviour
     public Vector3 pos_tem;
     public float escala_poder;
     public float dano_especial;
+
+    public Sprite [] armaduras;
     // Start is called before the first frame update
     void Start()
     {
@@ -95,6 +97,7 @@ public class jogador : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        GetComponent<SpriteRenderer>().sprite = armaduras[jogo.nivel_armadura];
        // test_poder();
         if (tempo_dano_queda > 0) { tempo_dano_queda += Time.deltaTime; }
         if (tempo_dano_queda > 1) { tempo_dano_queda = 0; }

@@ -23,6 +23,7 @@ public class jogo : MonoBehaviour
     public AudioClip[] musicas;
     public AudioSource som;
 
+    public int armadura_test;
   
     public Sprite[] arvores_sprite;
     // Start is called before the first frame update
@@ -53,6 +54,7 @@ public class jogo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       
         /*
         if (Input.GetKey(KeyCode.Alpha1)) {
 
