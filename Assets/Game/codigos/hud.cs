@@ -35,6 +35,13 @@ public class hud : MonoBehaviour
     public static int almas;
     public static int almas_inicial;
     public TMP_Text alma_text;
+    public TMP_Text quantidade_item;
+
+    public int num_item;
+    public Image item_slot;
+    public Sprite[] img_itens;
+
+
    // public paralax para1;
     //public paralax para2;
     // Start is called before the first frame update
@@ -56,6 +63,9 @@ public class hud : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(num_item ==0){quantidade_item.text="x"+jogo.num_pocao;item_slot.sprite=img_itens[0];}
+        else if(num_item ==1){quantidade_item.text="x"+jogo.num_pocaoAzul;item_slot.sprite=img_itens[1];}
+
         if (player.GetComponent<jogador>().caiu) {
            // para1.voltar_pos();
            // para2.voltar_pos();
