@@ -62,7 +62,11 @@ public class jogador : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        jogo.nivel_armadura = PlayerPrefs.GetInt("armadura");
+        if(jogo.nivel_armadura==0){vida_Max=100;}
+        else if(jogo.nivel_armadura==1){vida_Max=200;}
+        else if(jogo.nivel_armadura==2){vida_Max=300;}
+
         if (elemento1est == null) { elemento1est = ""; }
         if (elemento2est == null) { elemento2est = ""; }
         elemento1 = elemento1est;
@@ -79,6 +83,10 @@ public class jogador : MonoBehaviour
         poder_countdown = 0;
         poderes_invocados_lista = new List<GameObject>();
        
+       if(lojinha.armadura_recente){
+            vida_atual = vida_Max;
+            lojinha.armadura_recente =false;
+       }
 
     }
     public void test_poder() {

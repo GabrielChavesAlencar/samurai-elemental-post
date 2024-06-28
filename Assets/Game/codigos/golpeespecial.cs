@@ -91,7 +91,9 @@ public class golpeespecial : MonoBehaviour
     }
 
     public void aplicardano(Collider2D collision,float d_t,int temp_color) {
-        if(jogo.tempo_pocaoAzul>0){dano = dano * 1.5f;}
+        if(jogo.nivel_armadura==2&&jogo.tempo_pocaoAzul>0){dano = dano * 2;}
+        else if(jogo.tempo_pocaoAzul>0||jogo.nivel_armadura==2){dano = dano * 1.5f;}
+        
             //else{}
         if (collision.GetComponent<mob>().atual.tipo != inimigos.lista_insetos.Boss_formiga)
         {

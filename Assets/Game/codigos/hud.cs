@@ -54,7 +54,6 @@ public class hud : MonoBehaviour
         tamanho_rect_boss = barra_HP_boss.sizeDelta.x;
 
         
-        
     }
     public void tamanho_hp_boss(float hp_atual,float hp_max) {
         float conta_hp = tamanho_rect_boss * hp_atual / hp_max;

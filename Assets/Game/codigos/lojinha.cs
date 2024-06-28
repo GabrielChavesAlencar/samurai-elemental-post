@@ -34,6 +34,7 @@ public class lojinha : MonoBehaviour
     public GameObject elemento_obj;
     public hud uis;
 
+    public static bool armadura_recente;
 
     // Start is called before the first frame update
     void Start()
@@ -100,6 +101,7 @@ public class lojinha : MonoBehaviour
                 jogo.nivel_armadura=1;
                 PlayerPrefs.SetInt("almas", hud.almas);
                 PlayerPrefs.SetInt("armadura", 1);
+                armadura_recente = true;
             }
         
         }
@@ -112,6 +114,7 @@ public class lojinha : MonoBehaviour
                 jogo.nivel_armadura=2;
                 PlayerPrefs.SetInt("almas", hud.almas);
                 PlayerPrefs.SetInt("armadura", 2);
+                armadura_recente = true;
             }
         
         }

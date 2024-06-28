@@ -31,6 +31,7 @@ public class jogo : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
          
         //num_tela = 9;
        
@@ -52,8 +53,7 @@ public class jogo : MonoBehaviour
 
         num_pocao = PlayerPrefs.GetInt("pocoes");
         num_pocaoAzul = PlayerPrefs.GetInt("pocoesAzul");
-        nivel_armadura = PlayerPrefs.GetInt("armadura");
-
+       
 
 
 

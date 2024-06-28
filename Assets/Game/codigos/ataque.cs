@@ -26,6 +26,8 @@ public class ataque : MonoBehaviour
         {
             if(!collision.GetComponent<mob>().invulneravel){
                 dano = dano * 10;
+                if(jogo.nivel_armadura==1){dano = dano + 10;}
+                if(jogo.nivel_armadura==2){dano = dano + 20;}
                 float d_t = 0.7f;
                 som.Play();
                 if (collision.GetComponent<mob>().atual.tipo != inimigos.lista_insetos.Boss_formiga)
