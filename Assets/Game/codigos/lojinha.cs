@@ -14,9 +14,13 @@ public class lojinha : MonoBehaviour
 
     public int rand;
 
-    public Text mensagem;
+   
 
-    public GameObject obt_text;
+    public GameObject obt_text1;
+    public GameObject obt_text2;
+    public GameObject obt_text3;
+    public GameObject obt_text4;
+    public GameObject obt_text5;
 
     public item_mensagem item1;
     public item_mensagem item2;
@@ -48,7 +52,7 @@ public class lojinha : MonoBehaviour
 
 
         if(item1.ativado){
-            obt_text.SetActive(true);mensagem.text = "poção";
+            obt_text1.SetActive(true);
             if (Input.GetKeyDown(controle_config.chave_coletar)&&hud.almas>=5){
                 hud.almas-=5;
                 jogo.num_pocao++;
@@ -57,8 +61,10 @@ public class lojinha : MonoBehaviour
             }
         
         }
-        else if(item2.ativado){
-            obt_text.SetActive(true);mensagem.text = "poção azul";
+        else{obt_text1.SetActive(false);}
+
+        if(item2.ativado){
+            obt_text2.SetActive(true);
             if (Input.GetKeyDown(controle_config.chave_coletar)&&hud.almas>=20){
                 hud.almas-=20;
                 jogo.num_pocaoAzul++;
@@ -67,12 +73,16 @@ public class lojinha : MonoBehaviour
             }
         
         }
-        else if(item3.ativado){
-            obt_text.SetActive(true);mensagem.text = "elemento";
+        else{obt_text2.SetActive(false);}
+
+        if(item3.ativado){
+            obt_text3.SetActive(true);
             if (Input.GetKeyDown(controle_config.chave_coletar)&&hud.almas>=10){}
         }
-        else if(item4.ativado){
-            obt_text.SetActive(true);mensagem.text = "armadura";
+        else{obt_text3.SetActive(false);}
+
+        if(item4.ativado){
+            obt_text4.SetActive(true);
             if (Input.GetKeyDown(controle_config.chave_coletar)&&hud.almas>=70){
                 hud.almas-=70;
                 jogo.nivel_armadura=1;
@@ -81,8 +91,10 @@ public class lojinha : MonoBehaviour
             }
         
         }
-        else if(item5.ativado){
-            obt_text.SetActive(true);mensagem.text = "armadura";
+        else{obt_text4.SetActive(false);}
+
+        if(item5.ativado){
+            obt_text5.SetActive(true);
             if (Input.GetKeyDown(controle_config.chave_coletar)&&hud.almas>=150){
                 hud.almas-=150;
                 jogo.nivel_armadura=2;
@@ -91,6 +103,6 @@ public class lojinha : MonoBehaviour
             }
         
         }
-        else{obt_text.SetActive(false);}
+        else{obt_text5.SetActive(false);}
     }
 }

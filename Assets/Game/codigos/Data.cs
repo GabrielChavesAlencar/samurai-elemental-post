@@ -733,6 +733,58 @@ public static class Data {
                 }
 
             }
+            ,
+             { "descricao_pocaoAzul",new Dictionary<string,string>()
+                {
+                    {"en-US","A potion that temporarily boosts magical powers." },
+                    {"ru-RU","Зелье, временно увеличивающее магическую силу." },
+                    {"ja-JP","魔法力を一時的に強化するポーション。" },
+                    {"es-ES","Una poción que aumenta temporalmente los poderes mágicos." },
+                    {"zh-CN","一种暂时增强魔法力量的药剂。" },
+                    {"de-DE","Ein Trank, der die magischen Kräfte vorübergehend verstärkt." },
+                    {"pt-BR","Uma poção que aumenta temporariamente os poderes mágicos."}
+                }
+
+            }
+            ,
+             { "descricao_armaduraVermelha",new Dictionary<string,string>()
+                {
+                    {"en-US","The Red Armor, imbued with the experiences of an ancient samurai, increases your maximum health and sword attacks." },
+                    {"ru-RU","Красная броня, пропитанная опытом древнего самурая, увеличивает ваше максимальное здоровье и силу атаки мечом." },
+                    {"ja-JP","古代の侍の経験が染み込んだ赤い鎧は、最大体力と剣攻撃力を強化する。" },
+                    {"es-ES","La Armadura Roja, impregnada con las experiencias de un antiguo samurai, aumenta tu vida máxima y los ataques de espada." },
+                    {"zh-CN","这件红色的盔甲，浸透着古代武士的经验，提升你的最大生命值和剑攻击力。" },
+                    {"de-DE","Die Rote Rüstung, durchtränkt mit den Erfahrungen eines alten Samurai, erhöht deine maximale Gesundheit und deine Schwertangriffe." },
+                    {"pt-BR"," A Armadura Vermelha, imbuída com as experiências de um antigo samurai, aumenta sua vida máxima e os ataques de espada."}
+                }
+
+            }
+            ,
+             { "descricao_armaduraSombras",new Dictionary<string,string>()
+                {
+                    {"en-US","The Shadow Armor, forged in the Black Forest, boosts player health, physical attack and magic, ensuring a powerful defense." },
+                    {"ru-RU","Броня Теней, созданная в Черном Лесу, увеличивает здоровье, физическую атаку и магию игрока, обеспечивая мощную защиту." },
+                    {"ja-JP","黒の森で作られた影の鎧は、プレイヤーの体力、物理攻撃、魔法を強化し、強力な防御を提供します。" },
+                    {"es-ES","La Armadura de las Sombras, forjada en el Bosque Oscuro, incrementa la salud, el ataque físico y la magia del jugador, ofreciendo una defensa poderosa." },
+                    {"zh-CN","由黑森林打造的暗影盔甲，提升玩家的生命值、物理攻击和魔法值，确保强大的防御。" },
+                    {"de-DE","Die Schattenrüstung, geschmiedet im Schwarzen Wald, erhöht die Gesundheit, den physischen Angriff und die Magie des Spielers und sorgt für eine starke Verteidigung." },
+                    {"pt-BR","A Armadura das Sombras, criada na Floresta Negra, aumenta a saúde, o ataque físico e a magia do jogador, garantindo uma defesa poderosa."}
+                }
+
+            }
+            ,
+             { "descricao_elemento",new Dictionary<string,string>()
+                {
+                    {"en-US","An element that can be absorbed to use against your enemies." },
+                    {"ru-RU","Элемент, который можно поглотить, чтобы использовать против врагов." },
+                    {"ja-JP","敵に使えるように吸収できる要素。" },
+                    {"es-ES","Un elemento que se puede absorber para usar contra tus enemigos." },
+                    {"zh-CN","可以吸收用来对抗敌人的元素。" },
+                    {"de-DE","Ein Element, das absorbiert werden kann, um gegen deine Feinde eingesetzt zu werden." },
+                    {"pt-BR","Um elemento que pode ser absorvido para usar contra seus inimigos."}
+                }
+
+            }
 
 
 
