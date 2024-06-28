@@ -51,6 +51,8 @@ public class hud : MonoBehaviour
         poderes_invocados = new GameObject[15];
         tamanho_rect = barra_HP.sizeDelta.x;
         tamanho_rect_boss = barra_HP_boss.sizeDelta.x;
+
+        
         
     }
     public void tamanho_hp_boss(float hp_atual,float hp_max) {

@@ -31,10 +31,14 @@ public class lojinha : MonoBehaviour
     
     public GameObject armadura1;
     public GameObject armadura2;
+    public GameObject elemento_obj;
+    public hud uis;
+
 
     // Start is called before the first frame update
     void Start()
     {
+       
         rand = Random.Range(0,5);
         elemento.sprite = img_elementos[rand];
 
@@ -77,7 +81,15 @@ public class lojinha : MonoBehaviour
 
         if(item3.ativado){
             obt_text3.SetActive(true);
-            if (Input.GetKeyDown(controle_config.chave_coletar)&&hud.almas>=10){}
+            if (Input.GetKeyDown(controle_config.chave_coletar)&&hud.almas>=10){
+                if (rand == 0) { uis.invocar_poder(transform.position + new Vector3(7,-7,0), 0, "fogo"); }
+                else if (rand == 1) { uis.invocar_poder(transform.position + new Vector3(7,-7,0), 1, "agua"); }
+                else if (rand == 2) { uis.invocar_poder(transform.position + new Vector3(7,-7,0), 2, "pedra"); }
+                else if (rand == 3) { uis.invocar_poder(transform.position + new Vector3(7,-7,0), 3, "eletrico"); }
+                else if (rand == 4) { uis.invocar_poder(transform.position + new Vector3(7,-7,0), 4, "vento"); }
+                hud.almas-=10;
+                elemento_obj.SetActive(false);
+            }
         }
         else{obt_text3.SetActive(false);}
 
@@ -104,5 +116,8 @@ public class lojinha : MonoBehaviour
         
         }
         else{obt_text5.SetActive(false);}
+
+           
+
     }
 }

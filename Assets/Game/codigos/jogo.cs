@@ -29,6 +29,7 @@ public class jogo : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+         
         //num_tela = 9;
        
         som = GetComponent<AudioSource>();
