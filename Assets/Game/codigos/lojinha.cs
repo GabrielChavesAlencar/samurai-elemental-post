@@ -34,6 +34,8 @@ public class lojinha : MonoBehaviour
     public GameObject elemento_obj;
     public hud uis;
 
+    public AudioSource som_comprar;
+
     public static bool armadura_recente;
 
     // Start is called before the first frame update
@@ -63,6 +65,8 @@ public class lojinha : MonoBehaviour
                 jogo.num_pocao++;
                 PlayerPrefs.SetInt("almas", hud.almas);
                 PlayerPrefs.SetInt("pocoes", jogo.num_pocao);
+                som_comprar.Play();
+
             }
         
         }
@@ -75,6 +79,8 @@ public class lojinha : MonoBehaviour
                 jogo.num_pocaoAzul++;
                 PlayerPrefs.SetInt("almas", hud.almas);
                 PlayerPrefs.SetInt("pocoesAzul", jogo.num_pocaoAzul);
+                som_comprar.Play();
+
             }
         
         }
@@ -90,6 +96,8 @@ public class lojinha : MonoBehaviour
                 else if (rand == 4) { uis.invocar_poder(transform.position + new Vector3(7,-7,0), 4, "vento"); }
                 hud.almas-=10;
                 elemento_obj.SetActive(false);
+                som_comprar.Play();
+
             }
         }
         else{obt_text3.SetActive(false);}
@@ -102,6 +110,8 @@ public class lojinha : MonoBehaviour
                 PlayerPrefs.SetInt("almas", hud.almas);
                 PlayerPrefs.SetInt("armadura", 1);
                 armadura_recente = true;
+                som_comprar.Play();
+
             }
         
         }
@@ -115,6 +125,7 @@ public class lojinha : MonoBehaviour
                 PlayerPrefs.SetInt("almas", hud.almas);
                 PlayerPrefs.SetInt("armadura", 2);
                 armadura_recente = true;
+                som_comprar.Play();
             }
         
         }

@@ -46,6 +46,7 @@ public class jogador : MonoBehaviour
 
     public AudioClip[] efeitos_katana;
     public AudioSource som;
+    public AudioSource som_pocao;
     public bool dano_queda;
     public float maxY;
     private float dano_quedas;
@@ -491,6 +492,8 @@ public class jogador : MonoBehaviour
     public void pocao_azul(){
         jogo.num_pocaoAzul--;
         jogo.tempo_pocaoAzul = 60;
+        som_pocao.Play();
+
     }
     public void reiniciarpos() { transform.position = pos_inicial;caiu = true; }
     private void OnCollisionEnter2D(Collision2D collision)
@@ -746,6 +749,7 @@ public class jogador : MonoBehaviour
      vida_atual= vida_atual+(vida_Max/2);
      if(vida_atual>vida_Max){vida_atual= vida_Max;}
      jogo.num_pocao--;
+     som_pocao.Play();
    }
    public void poder_local(int i ,float x,float y,float escala,float damage){
         if(transform.localScale.x>0){
