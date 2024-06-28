@@ -30,6 +30,7 @@ public class golpeespecial : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("inimigo")&&!collision.GetComponent<mob>().invulneravel)
         {
+            
             dano = dano * 10;
             if (!veloz)
             {
@@ -90,7 +91,8 @@ public class golpeespecial : MonoBehaviour
     }
 
     public void aplicardano(Collider2D collision,float d_t,int temp_color) {
-
+        if(jogo.tempo_pocaoAzul>0){dano = dano * 1.5f;}
+            //else{}
         if (collision.GetComponent<mob>().atual.tipo != inimigos.lista_insetos.Boss_formiga)
         {
             collision.GetComponent<mob>().countdown_dano = 0.01f;

@@ -482,6 +482,7 @@ public class jogador : MonoBehaviour
     }
     public void pocao_azul(){
         jogo.num_pocaoAzul--;
+        jogo.tempo_pocaoAzul = 60;
     }
     public void reiniciarpos() { transform.position = pos_inicial;caiu = true; }
     private void OnCollisionEnter2D(Collision2D collision)

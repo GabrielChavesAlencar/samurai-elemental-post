@@ -26,6 +26,8 @@ public class jogo : MonoBehaviour
     public int armadura_test;
   
     public Sprite[] arvores_sprite;
+
+    public static float tempo_pocaoAzul;
     // Start is called before the first frame update
     void Start()
     {
@@ -60,7 +62,9 @@ public class jogo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+       if(tempo_pocaoAzul>0){
+        tempo_pocaoAzul-=Time.deltaTime;
+       }
         /*
         if (Input.GetKey(KeyCode.Alpha1)) {
 
