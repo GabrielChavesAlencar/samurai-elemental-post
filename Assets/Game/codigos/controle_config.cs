@@ -39,6 +39,9 @@ public class controle_config : MonoBehaviour
     public Text combinar_text;
     public Text sair_text;
 
+    public Text usarItem_text;
+    public Text trocarItem_text;
+
 
     private void Awake()
     {
@@ -55,6 +58,9 @@ public class controle_config : MonoBehaviour
         if( PlayerPrefs.GetString("coletar")==""){PlayerPrefs.SetString("coletar","Insert");}
         if( PlayerPrefs.GetString("combinar")==""){PlayerPrefs.SetString("combinar","Home");}
         if( PlayerPrefs.GetString("sair")==""){PlayerPrefs.SetString("sair","Escape");}
+
+        if( PlayerPrefs.GetString("usarItem")==""){PlayerPrefs.SetString("usarItem","I");}
+        if( PlayerPrefs.GetString("trocarItem")==""){PlayerPrefs.SetString("trocarItem","O");}
         
         
         chave_direita = allKeyCodes.Find(x =>  x+"" == PlayerPrefs.GetString("direita"));
@@ -65,6 +71,9 @@ public class controle_config : MonoBehaviour
         chave_coletar = allKeyCodes.Find(x =>  x+"" == PlayerPrefs.GetString("coletar"));
         chave_combinar = allKeyCodes.Find(x =>  x+"" == PlayerPrefs.GetString("combinar"));
         chave_sair = allKeyCodes.Find(x =>  x+"" == PlayerPrefs.GetString("sair"));
+
+        chave_usarItem = allKeyCodes.Find(x =>  x+"" == PlayerPrefs.GetString("usarItem"));
+        chave_trocarItem = allKeyCodes.Find(x =>  x+"" == PlayerPrefs.GetString("trocarItem"));
     }
 
 
@@ -87,6 +96,9 @@ public class controle_config : MonoBehaviour
             coletar_text.text = chave_coletar+"";
             combinar_text.text = chave_combinar+"";
             sair_text.text = chave_sair+"";
+
+            usarItem_text.text = chave_usarItem+"";
+            trocarItem_text.text = chave_trocarItem+"";
         }
         if (Input.anyKeyDown&&trocar_botoes)
         {
@@ -103,6 +115,9 @@ public class controle_config : MonoBehaviour
                   else if(indice==5){ PlayerPrefs.SetString("coletar",key+"");chave_coletar = key;}
                   else if(indice==6){ PlayerPrefs.SetString("combinar",key+"");chave_combinar = key;}
                   else if(indice==7){ PlayerPrefs.SetString("sair",key+"");chave_sair = key;}
+
+                  else if(indice==8){ PlayerPrefs.SetString("usarItem",key+"");chave_usarItem = key;}
+                  else if(indice==9){ PlayerPrefs.SetString("trocarItem",key+"");chave_trocarItem = key;}
 
                    
                 trocar_botoes = false;

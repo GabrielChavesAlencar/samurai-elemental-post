@@ -785,6 +785,43 @@ public static class Data {
                 }
 
             }
+            ,
+             { "usaritem_key",new Dictionary<string,string>()
+                {
+                    {"en-US","Use item" },
+                    {"ru-RU","Использовать предмет" },
+                    {"ja-JP","アイテムを使う" },
+                    {"es-ES","Usar objeto" },
+                    {"zh-CN","使用物品" },
+                    {"de-DE","Gegenstand verwenden" },
+                    {"pt-BR","Usar item"}
+                }
+            }
+            ,
+             { "trocaritem_key",new Dictionary<string,string>()
+                {
+                    {"en-US","Swap item" },
+                    {"ru-RU","Поменять предмет" },
+                    {"ja-JP","アイテム交換" },
+                    {"es-ES","Cambiar objeto" },
+                    {"zh-CN","替换物品" },
+                    {"de-DE","Gegenstand tauschen" },
+                    {"pt-BR","Trocar item"}
+                }
+            }
+            ,
+             { "paraTrocar_key",new Dictionary<string,string>()
+                {
+                    {"en-US","to swap the item" },
+                    {"ru-RU","чтобы поменять предмет" },
+                    {"ja-JP","アイテムを交換するために" },
+                    {"es-ES","para intercambiar el objeto" },
+                    {"zh-CN","为了交换物品" },
+                    {"de-DE","um das Objekt zu tauschen" },
+                    {"pt-BR","para trocar o item"}
+                }
+
+            }
 
 
 

@@ -63,7 +63,7 @@ public class hud : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(jogo.tempo_pocaoAzul>0){tomoe.color = new Color(0,0.55f,1,1);}
+        if(jogo.tempo_pocaoAzul>0){tomoe.color = new Color(0.75f,0.75f,1,1);}
         else{tomoe.color = Color.black;}
         if(num_item ==0){quantidade_item.text="x"+jogo.num_pocao;item_slot.sprite=img_itens[0];item_segurado.sprite=img_itens[0];}
         else if(num_item ==1){quantidade_item.text="x"+jogo.num_pocaoAzul;item_slot.sprite=img_itens[1];item_segurado.sprite=img_itens[1];}

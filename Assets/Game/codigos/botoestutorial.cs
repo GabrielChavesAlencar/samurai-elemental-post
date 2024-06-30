@@ -12,6 +12,9 @@ public class botoestutorial : MonoBehaviour
     public Text especial_text;
     public Text coletar_text;
     public Text combinar_text;
+
+    public Text usarpotion_text;
+    public Text trocaritem_text;
   //  public Text sair_text;
     // Start is called before the first frame update
     void Start()
@@ -23,6 +26,9 @@ public class botoestutorial : MonoBehaviour
             especial_text.text = controle_config.chave_especial+"";
             coletar_text.text = controle_config.chave_coletar+"";
             combinar_text.text = controle_config.chave_combinar+"";
+
+            usarpotion_text.text = controle_config.chave_usarItem+"";
+            trocaritem_text.text = controle_config.chave_trocarItem+"";
             //sair_text.text = controle_config.chave_sair+"";
         
     }
